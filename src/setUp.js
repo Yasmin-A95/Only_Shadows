@@ -38,6 +38,8 @@ function animation() { // big boi
 
     renderer.render( scene, camera );
     firstPersonController.update(clock.getDelta()); 
+
+    // console.log(camera.position.x, camera.position.y);
 };
 
 export default init;

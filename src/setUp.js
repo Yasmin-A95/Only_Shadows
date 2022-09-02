@@ -1,12 +1,27 @@
 import * as THREE from 'three';
 import { FirstPersonControls } from './controls';
 import { InteractionManager } from "three.interactive";
-let camera, scene, renderer, firstPersonController, interactionManager;
+let camera, renderer, firstPersonController, interactionManager;
 
-function init(main) {
+let currentScene, isReady;
+
+function init() {
     threeSetup();
     initLibraries();
-    main(scene, interactionManager);
+};
+
+export function getInteractionManager() {
+    return interactionManager;
+};
+
+export function changeScene(scene) {
+    currentScene = scene;
+};
+
+export function start(scene) {
+    isReady = true;
+    currentScene = scene;
+    renderer.setAnimationLoop(animation);
 };
 
 function initLibraries() {
@@ -24,22 +39,18 @@ function initLibraries() {
 function threeSetup() {
     camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 10);
     camera.position.y = -2;
-    scene = new THREE.Scene();
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setAnimationLoop(animation);
     document.body.appendChild(renderer.domElement);
 };
 
 const clock = new THREE.Clock();
 
-function animation() { // big boi
+function animation() {
     interactionManager.update();
 
-    renderer.render( scene, camera );
-    firstPersonController.update(clock.getDelta()); 
-
-    // console.log(camera.position.x, camera.position.y);
+    renderer.render( currentScene, camera );
+    firstPersonController.update(clock.getDelta());
 };
 
 export default init;

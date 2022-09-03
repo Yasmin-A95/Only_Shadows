@@ -1,13 +1,13 @@
 import * as THREE from 'three';
 import image from '../assets/images/bubbleroom.jpg';
 import { getInteractionManager, changeScene } from '../setUp';
-import { main as cubeMain } from './cube'
+import { main as cubeMain } from './cubeRoom';
 
 export function main() {
     const scene = new THREE.Scene();
 
     const interactionManager = getInteractionManager();
-    handleEnvironmentSphere(scene, interactionManager);
+    environmentSphere(scene, interactionManager);
 
     const clickableCube = overlockerCube(scene, interactionManager);
     const secondObj = secondClickableObj(scene, interactionManager)
@@ -25,7 +25,7 @@ export function main() {
     return scene;
 };
 
-function handleEnvironmentSphere(scene, interactionManager) {
+function environmentSphere(scene, interactionManager) {
     const geometry = new THREE.SphereGeometry(5, 32, 16);
     const material = new THREE.MeshBasicMaterial({
         map: new THREE.TextureLoader().load(

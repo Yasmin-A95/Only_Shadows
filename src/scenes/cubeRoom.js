@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {hideText, unhideText, updateText} from './textUpdate';
 
 export function main() {
     const scene = new THREE.Scene();
@@ -11,6 +12,8 @@ export function main() {
     mesh.position.z = 2;
 
     scene.add(mesh);
+
+    updateText("Welcome to your nightmare");
 
     return scene;
 };

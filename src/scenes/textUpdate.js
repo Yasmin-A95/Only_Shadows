@@ -1,23 +1,21 @@
 const textDiv = document.getElementById('text-display');
-const text = document.getElementById('text');
 
-
-function hideText() {
+export function hideText() {
     textDiv.classList.add('hidden');
 }
 
-function unhideText() {
+export function unhideText() {
     textDiv.classList.remove('hidden');
 }
 
-function updateText(str) {
+export function updateText(str) {
 
     function clearText() {
-        text.innerText = "";
+        textDiv.innerText = "";
     }
 
     function replaceText(str) {
-        text.innerText = str;
+        textDiv.innerText = str;
     }
 
     clearText();

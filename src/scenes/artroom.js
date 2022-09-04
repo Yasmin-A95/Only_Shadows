@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import image from '../assets/images/bubbleroom.jpg';
 import { getInteractionManager, changeScene } from '../setUp';
 import { main as cubeMain } from './cubeRoom';
+import { CSS2DObject } from 'three-css2drenderer';
 
 export function main() {
     const scene = new THREE.Scene();
@@ -10,7 +11,7 @@ export function main() {
     environmentSphere(scene, interactionManager);
 
     const clickableCube = overlockerCube(scene, interactionManager);
-    const secondObj = secondClickableObj(scene, interactionManager)
+    const secondObj = heaterCube(scene, interactionManager)
     const axesHelper = new THREE.AxesHelper( 5 );
     scene.add( axesHelper );
     clickableCube.addEventListener('click', function (e) {
@@ -56,7 +57,7 @@ function overlockerCube(scene, interactionManager) {
     // 
 };
 
-function secondClickableObj(scene, interactionManager) {
+function heaterCube(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({wireframe: true, opacity: 0.5});
     const cube = new THREE.Mesh( geometry, material );

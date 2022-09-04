@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { FirstPersonControls } from './controls';
 import { InteractionManager } from "three.interactive";
+import { CSS2DRenderer } from 'three-css2drenderer';
+
 let camera, renderer, firstPersonController, interactionManager;
 
 let currentScene, isReady;
@@ -34,6 +36,12 @@ function initLibraries() {
         camera,
         renderer.domElement
     );
+
+    labelRenderer = new CSS2DRenderer();
+		labelRenderer.setSize( window.innerWidth, window.innerHeight );
+		labelRenderer.domElement.style.position = 'absolute';
+		labelRenderer.domElement.style.top = '0px';
+		document.body.appendChild( labelRenderer.domElement );
 };
 
 function threeSetup() {

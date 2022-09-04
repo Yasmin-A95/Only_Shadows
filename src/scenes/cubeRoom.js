@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {hideText, unhideText, updateText} from './textUpdate';
+import { updateText } from '../textUpdate';
 
 export function main() {
     const scene = new THREE.Scene();

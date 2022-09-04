@@ -1,7 +1,7 @@
 import * as THREE from 'three';
-import { updateText } from '../textUpdate';
+import { updateText } from '../dom/text-update';
 
-export function main() {
+export function cubeRoomFactory() {
     const scene = new THREE.Scene();
 
     const geometry = new THREE.BoxGeometry(1, 1, 1);

@@ -1,28 +1,24 @@
 import * as THREE from 'three';
-import { FirstPersonControls } from './controls';
+import { FirstPersonControls } from './lib/controls';
+import { getCurrentScene, changeScene } from './scenes/scene-manager';
 import { InteractionManager } from "three.interactive";
+import { loadGame } from './state-management/game-state';
 
 let camera, renderer, firstPersonController, interactionManager;
-
-let currentScene, isReady;
 
 function init() {
     threeSetup();
     initLibraries();
+    loadGame();
+};
+
+export function startGame(sceneFactory) {
+    changeScene(sceneFactory);
+    renderer.setAnimationLoop(animation);
 };
 
 export function getInteractionManager() {
     return interactionManager;
-};
-
-export function changeScene(scene) {
-    currentScene = scene;
-};
-
-export function start(scene) {
-    isReady = true;
-    currentScene = scene;
-    renderer.setAnimationLoop(animation);
 };
 
 function initLibraries() {
@@ -50,7 +46,7 @@ const clock = new THREE.Clock();
 function animation() {
     interactionManager.update();
 
-    renderer.render( currentScene, camera );
+    renderer.render( getCurrentScene(), camera );
     firstPersonController.update(clock.getDelta());
 };
 

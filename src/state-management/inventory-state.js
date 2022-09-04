@@ -21,7 +21,7 @@ export function addNoteToInventory(text, icon) {
 }
 
 export function addImageToInventory(image, icon) {
-    addImageToInventory({
+    addInventoryItem({
         type: "image",
         image,
         icon
@@ -29,7 +29,7 @@ export function addImageToInventory(image, icon) {
 }
 
 export function addObjectToInventory(description, icon) {
-    addImageToInventory({
+    addInventoryItem({
         type: "object",
         description,
         icon

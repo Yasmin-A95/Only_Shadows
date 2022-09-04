@@ -1,10 +1,9 @@
-import init, { start } from './setUp';
-import { main as artroomMain } from './scenes/artRoom';
+import init, { startGame } from './setup';
+import { artRoomFactory as artRoomFactory } from './scenes/art-room';
 import './style.css';
 
 init();
-const initialScene = artroomMain();
-start(initialScene);
+startGame(artRoomFactory);
 
 // TODO: make a main screen if time permits ..... lol
 

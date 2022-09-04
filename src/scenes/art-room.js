@@ -1,9 +1,12 @@
 import * as THREE from 'three';
 import image from '../assets/images/bubbleroom.jpg';
-import { getInteractionManager, changeScene } from '../setUp';
-import { main as cubeMain } from './cubeRoom';
+import { getInteractionManager } from '../setup';
+import { changeScene } from './scene-manager';
+import { cubeRoomFactory as cubeRoomFactory } from './cube-room';
+import { addObjectToInventory } from '../state-management/inventory-state';
 
-export function main() {
+// make the room
+export function artRoomFactory() {
     const scene = new THREE.Scene();
 
     const interactionManager = getInteractionManager();
@@ -14,11 +17,11 @@ export function main() {
     const axesHelper = new THREE.AxesHelper( 5 );
     scene.add( axesHelper );
     clickableCube.addEventListener('click', function (e) {
-        const cubeScene = cubeMain();
-        changeScene(cubeScene);
+        changeScene(cubeRoomFactory);
     });
     secondObj.addEventListener('click', function (e) {
         console.log(`clicks on heater`); 
+        addObjectToInventory("heater, rip", "none");
     });
 
     return scene;
@@ -40,6 +43,7 @@ function environmentSphere(scene, interactionManager) {
     return mesh;
 };
 
+// making objects
 function overlockerCube(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.5 });

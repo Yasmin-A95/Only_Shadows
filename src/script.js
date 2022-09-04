@@ -1,46 +1,13 @@
 import init, { start } from './setUp';
 import { main as artroomMain } from './scenes/artRoom';
 import './style.css';
-import { saveInventory, saveTimeline, getInventory, getTimeline, getState } from './state-spike';
 
 init();
 const initialScene = artroomMain();
 start(initialScene);
 
-// new Game
-// init the local storage
-// set up the shape the data
+// TODO: make a main screen if time permits ..... lol
 
-// call all predefined localstorage functions and set the initial values
+// TODO: to make a new game button a button on the dom maybe in the uppy nav bar kind of section would call localstorage.clear() and window.refresh or whatever to auto refresh - yeah
 
-// init timeLine
-saveTimeline({
-    position: "house-0",
-    scene: "artroom-0"
-});
-
-saveInventory([]);
-
-console.log(getState());
-
-// load the game
-
-// getState();
-
-// // click on a note
-
-
-// const note = {
-
-// }
-// saveInventory(note);
-
-// // check your inventory
-
-// // go to a different room within the timeline node
-
-// // advance to a different part of the timeline
-
-// // shut down the game
-
-// // retreive saveFile
+// TODO: now i need autosave between checkPoints 

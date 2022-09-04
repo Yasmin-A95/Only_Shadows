@@ -20,11 +20,18 @@
     line-height: 40px;
     font-weight: 100;
     font-size: 14px;
-    border-radius: 50%
+    border-radius: 50%;
+    cursor: help;
+    transform: scale(0, 0);
+    transition: transform 0.3s;
 }
 
 .point:hover .text {
     opacity: 1;
+}
+
+.point.visible .label {
+    transform: scale(1, 1);
 }
 
 .point .text {
@@ -41,4 +48,6 @@
     font-weight: 100;
     font-size: 14px;
     opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
 }

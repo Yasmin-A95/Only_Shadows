@@ -69,3 +69,9 @@ function heaterCube(scene, interactionManager) {
     interactionManager.add(cube);
     return cube;
 };
+
+const points = [{
+    position: new THREE.Vector3(1.55, 0.3, -0.6),
+    element: document.querySelector('.point-0')
+}];
+console.log(points)

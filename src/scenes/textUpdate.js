@@ -11,5 +11,15 @@ function unhideText() {
 }
 
 function updateText(str) {
-    text.innerText = str;
+
+    function clearText() {
+        text.innerText = "";
+    }
+
+    function replaceText(str) {
+        text.innerText = str;
+    }
+
+    clearText();
+    replaceText(str);
 }

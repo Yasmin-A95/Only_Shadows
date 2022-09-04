@@ -3,7 +3,7 @@ import image from '../assets/images/bubbleroom.jpg';
 import { getInteractionManager } from '../setup';
 import { changeScene } from './scene-manager';
 import { cubeRoomFactory as cubeRoomFactory } from './cube-room';
-import { addObjectToInventory } from '../state-management/inventory-state';
+import { addObjectToInventory, getInventory, isObjectInInventory } from '../state-management/inventory-state';
 
 // make the room
 export function artRoomFactory() {
@@ -21,7 +21,9 @@ export function artRoomFactory() {
     });
     secondObj.addEventListener('click', function (e) {
         console.log(`clicks on heater`); 
+        if (!isObjectInInventory("heater, rip")) {
         addObjectToInventory("heater, rip", "none");
+        }
     });
 
     return scene;

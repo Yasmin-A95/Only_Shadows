@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import image from '../assets/images/bubbleroom.jpg';
 import { getInteractionManager, changeScene } from '../setUp';
 import { main as cubeMain } from './cubeRoom';
-import { CSS2DObject } from 'three-css2drenderer';
 
 export function main() {
     const scene = new THREE.Scene();
@@ -19,7 +18,6 @@ export function main() {
         changeScene(cubeScene);
     });
     secondObj.addEventListener('click', function (e) {
-        
         console.log(`clicks on heater`); 
     });
 
@@ -54,7 +52,6 @@ function overlockerCube(scene, interactionManager) {
     interactionManager.add(cube);
     return cube;
 
-    // 
 };
 
 function heaterCube(scene, interactionManager) {
@@ -69,9 +66,3 @@ function heaterCube(scene, interactionManager) {
     interactionManager.add(cube);
     return cube;
 };
-
-const points = [{
-    position: new THREE.Vector3(1.55, 0.3, -0.6),
-    element: document.querySelector('.point-0')
-}];
-console.log(points)

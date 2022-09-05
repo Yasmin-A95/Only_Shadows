@@ -3,7 +3,7 @@ import image from '../../assets/images/bubbleroom.jpg';
 import { getInteractionManager } from '../../setup';
 import { changeRoom } from '../scene-manager';
 import { cubeRoomFactory as cubeRoomFactory } from './cube-room';
-import { addObjectToInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { addNoteToInventory, addObjectToInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { checkTimeLine } from '../../state-management/timeline-state';
 
 
@@ -14,6 +14,7 @@ export function artRoomFactory() {
 
     const clickableCube = overlockerCube(scene, interactionManager);
     const secondObj = heaterCube(scene, interactionManager);
+    const ipadNote = ipadCube(scene, interactionManager)
     const axesHelper = new THREE.AxesHelper( 5 );
     scene.add( axesHelper );
 
@@ -28,6 +29,13 @@ export function artRoomFactory() {
         addObjectToInventory("heater, rip", "none");
         }
     }
+    });
+
+    ipadNote.addEventListener('click', function (e) {
+        if (checkTimeLine("house-0")) {
+            if (!isNoteInInventory('you clicked the ipad girl, good job'))
+            addNoteToInventory('you clicked the ipad girl, good job', 'none')
+        }
     });
 
     return scene;
@@ -76,3 +84,16 @@ function heaterCube(scene, interactionManager) {
     interactionManager.add(cube);
     return cube;
 };
+
+function ipadCube(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, opacity: 0.5});
+    const cube = new THREE.Mesh( geometry, material );
+    cube.position.x = 3.5;
+    cube.position.y = - 3;
+    cube.position.z = -1.9;
+
+    scene.add( cube );
+    interactionManager.add(cube);
+    return cube;
+}

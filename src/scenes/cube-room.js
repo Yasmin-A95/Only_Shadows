@@ -20,6 +20,8 @@ export function cubeRoomFactory() {
 
     clickableEvilCube.addEventListener('click', function (e) {
         console.log("you did it girl, nice");
+        // TODO add the new art room scene and then name the checkpoint in this function
+        //changeCheckpoint()
         changeScene(artRoomFactory);
     });
     

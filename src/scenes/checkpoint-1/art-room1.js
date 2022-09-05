@@ -32,7 +32,11 @@ export function artRoom1Factory() {
         if (checkTimeLine("house-1")) {
             if (!isObjectInInventory("heater, rip")) {
             addObjectToInventory("heater, rip", 'none')
-            };
+            updateText("nice, a warm heater");
+            } else if (isObjectInInventory) {
+                updateText("we've been through this already, get over the heater");
+
+            }
         }
     });
 

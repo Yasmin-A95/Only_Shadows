@@ -17,7 +17,8 @@ export function artRoom1Factory() {
     const clickableCube = overlockerCube(scene, interactionManager);
     const secondObj = heaterCube(scene, interactionManager);
     const ipadNote = ipadCube( scene, interactionManager );
-    const trolleyCubeImg = trolleyCube( scene, interactionManager );
+    const jumperCubeImg = jumperCube( scene, interactionManager );
+
 
     const axesHelper = new THREE.AxesHelper( 5 );
     scene.add( axesHelper );
@@ -43,7 +44,7 @@ export function artRoom1Factory() {
         }
     });
 
-    trolleyCubeImg.addEventListener('click', function(e) {
+    jumperCubeImg.addEventListener('click', function(e) {
         if (checkTimeLine("house-1")) {
             if (!isImageInInventory('img src coming soon')) {
             addImageToInventory('img src coming soon', 'icon coming soon')
@@ -113,7 +114,7 @@ function ipadCube(scene, interactionManager) {
     return cube;
 };
 
-function trolleyCube (scene, interactionManager) {
+function jumperCube (scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2);
     const material = new THREE.MeshBasicMaterial({wireframe: true, opacity: 0.5});
     const cube = new THREE.Mesh( geometry, material );

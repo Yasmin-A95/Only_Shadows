@@ -1,15 +1,8 @@
 import * as THREE from 'three';
-import { updateText } from '../dom/text-update';
-import { getInteractionManager } from '../setup';
-import { artRoomFactory } from './checkpoint-0/art-room';
-import { changeScene } from './scene-manager';
-
-// const clickableEvilCube = evilCube(scene, interactionManager);
-
-// clickableEvilCube.addEventListener("click", (e) => console.log('click on cube'))
-// // => wont work yet evilCube.addEventListener('click' etc)
-
-
+import { updateText } from '../../dom/text-update';
+import { getInteractionManager } from '../../setup';
+import { changeScene, changeCheckpoint } from '../scene-manager';
+import { artRoom1Factory } from '../checkpoint-1/art-room1';
 export function cubeRoomFactory() {
     const scene = new THREE.Scene();
     
@@ -21,8 +14,8 @@ export function cubeRoomFactory() {
     clickableEvilCube.addEventListener('click', function (e) {
         console.log("you did it girl, nice");
         // TODO add the new art room scene and then name the checkpoint in this function
-        //changeCheckpoint()
-        changeScene(artRoomFactory);
+        changeCheckpoint(artRoom1Factory, "checkpoint-1");
+        // changeScene(artRoom1Factory, "checkpoint-1");
     });
     
     updateText("Welcome to your nightmare");

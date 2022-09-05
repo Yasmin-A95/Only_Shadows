@@ -2,11 +2,11 @@ import * as THREE from 'three';
 import image from '../../assets/images/bubbleroom.jpg';
 import { getInteractionManager } from '../../setup';
 import { changeCheckpoint, changeScene } from '../scene-manager';
-import { cubeRoomFactory as cubeRoomFactory } from './cube-room';
 import { addObjectToInventory, getInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { updateText } from '../../dom/text-update';
 
 // make the room
-export function artRoomFactory() {
+export function artRoom1Factory() {
     const scene = new THREE.Scene();
 // init scene using three
 // then grap interactionManger
@@ -24,7 +24,7 @@ export function artRoomFactory() {
 
     // adding an event listener to the clickable cube and then it calls a function which switches scenes
     clickableCube.addEventListener('click', function (e) {
-        changeScene(cubeRoomFactory);
+        // changeScene(cubeRoomFactory);
     });
     // adding an event listener to the heater so that it console.logs click and also adds shit to the inventory 
     secondObj.addEventListener('click', function (e) {
@@ -78,5 +78,7 @@ function heaterCube(scene, interactionManager) {
     scene.add( cube );
 
     interactionManager.add(cube);
+    updateText("Hope you had a good time in your nightmare babes");
+
     return cube;
 };

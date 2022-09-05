@@ -12,6 +12,7 @@ export function cubeRoom1Factory() {
     // call evilCube giving it scene and interaction manager and assign that to a variable
     const clickableEvilCube = evilCube(scene, interactionManager);
     const inventoryRandomObject = randomObj(scene, interactionManager);
+    const clickableRandomNote = randomNote(scene, interactionManager);
 
     clickableEvilCube.addEventListener('click', function (e) {
         // changeRoom(cubeRoom1Factory);
@@ -21,6 +22,14 @@ export function cubeRoom1Factory() {
         if (checkTimeLine("house-1")) {
             if (!isObjectInInventory("cube dimensh obj")) {
             addObjectToInventory("cube dimensh obj", "none");
+            };
+        }
+    });
+
+    clickableRandomNote.addEventListener('click', function (e) {
+        if (checkTimeLine("house-1")) {
+            if (!isNoteInInventory("words")) {
+            addNoteToInventory("words", "none")
             };
         }
     });
@@ -50,6 +59,19 @@ function randomObj(scene, interactionManager) {
     cube.position.x = 3;
     cube.position.y = -2;
     cube.position.z = 3;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function randomNote(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "pink"});
+    const cube = new THREE.Mesh( geometry, material );
+    cube.position.x = 2.7;
+    cube.position.y = -2;
+    cube.position.z = 3.5;
 
     scene.add(cube);
     interactionManager.add(cube);

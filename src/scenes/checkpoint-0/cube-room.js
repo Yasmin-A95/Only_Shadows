@@ -3,7 +3,7 @@ import { updateText } from '../../dom/text-update';
 import { getInteractionManager } from '../../setup';
 import { changeCheckpoint } from '../scene-manager';
 import { artRoom1Factory } from '../checkpoint-1/art-room1';
-import { addObjectToInventory } from '../../state-management/inventory-state';
+import { addObjectToInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { checkTimeLine } from '../../state-management/timeline-state';
 export function cubeRoomFactory() {
     const scene = new THREE.Scene();
@@ -19,8 +19,9 @@ export function cubeRoomFactory() {
 
     inventoryRandomObject.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
-            console.log('you clicked on the obj in the cube dimenson girlll')
+            if (!isObjectInInventory("cube dimensh obj")) {
             addObjectToInventory("cube dimensh obj", "none");
+            };
         }
     });
     

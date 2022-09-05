@@ -28,7 +28,7 @@ export function artRoomFactory() {
         if (checkTimeLine("house-0")) {
             if (!isObjectInInventory("heater, rip")) {
             addObjectToInventory("heater, rip", "none");
-            }
+            };
         }
     });
 
@@ -36,7 +36,7 @@ export function artRoomFactory() {
         if (checkTimeLine("house-0")) {
             if (!isNoteInInventory('you clicked the ipad girl, good job')) {
             addNoteToInventory('you clicked the ipad girl, good job', 'none');
-            }
+            };
         }
     });
 
@@ -44,7 +44,7 @@ export function artRoomFactory() {
         if (checkTimeLine("house-0")) {
             if (!isImageInInventory('img src coming soon')) {
             addImageToInventory('img src coming soon', 'icon coming soon')
-            }
+            };
         }
     });
     return scene;

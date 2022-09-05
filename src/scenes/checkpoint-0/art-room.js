@@ -3,7 +3,7 @@ import image from '../../assets/images/bubbleroom.jpg';
 import { getInteractionManager } from '../../setup';
 import { changeRoom } from '../scene-manager';
 import { cubeRoomFactory as cubeRoomFactory } from './cube-room';
-import { addNoteToInventory, addObjectToInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { checkTimeLine } from '../../state-management/timeline-state';
 
 
@@ -12,9 +12,10 @@ export function artRoomFactory() {
     const interactionManager = getInteractionManager();
     environmentSphere(scene, interactionManager);
 
-    const clickableCube = overlockerCube(scene, interactionManager);
-    const secondObj = heaterCube(scene, interactionManager);
-    const ipadNote = ipadCube(scene, interactionManager)
+    const clickableCube = overlockerCube( scene, interactionManager );
+    const secondObj = heaterCube( scene, interactionManager );
+    const ipadNote = ipadCube( scene, interactionManager );
+    const trolleyCubeImg = trolleyCube( scene, interactionManager );
     const axesHelper = new THREE.AxesHelper( 5 );
     scene.add( axesHelper );
 
@@ -34,10 +35,17 @@ export function artRoomFactory() {
     ipadNote.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
             if (!isNoteInInventory('you clicked the ipad girl, good job'))
-            addNoteToInventory('you clicked the ipad girl, good job', 'none')
+            addNoteToInventory('you clicked the ipad girl, good job', 'none');
         }
     });
 
+    trolleyCubeImg.addEventListener('click', function(e) {
+        if (checkTimeLine("house-0")) {
+            if (!isImageInInventory('img src coming soon')) {
+            addImageToInventory('img src coming soon', 'icon coming soon')
+            }
+        }
+    });
     return scene;
 };
 
@@ -79,9 +87,9 @@ function heaterCube(scene, interactionManager) {
     cube.position.x = 1.5;
     cube.position.y = -4.5;
     cube.position.z = -1.5;
-    scene.add( cube );
 
-    interactionManager.add(cube);
+    scene.add( cube );
+    interactionManager.add( cube );
     return cube;
 };
 
@@ -94,6 +102,19 @@ function ipadCube(scene, interactionManager) {
     cube.position.z = -1.9;
 
     scene.add( cube );
-    interactionManager.add(cube);
+    interactionManager.add( cube );
     return cube;
-}
+};
+
+function trolleyCube (scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, opacity: 0.5});
+    const cube = new THREE.Mesh( geometry, material );
+    cube.position.x = - 3.7;
+    cube.position.y = -2.4;
+    cube.position.z = - 0.1;
+
+    scene.add( cube );
+    interactionManager.add( cube );
+    return cube;
+};

@@ -5,24 +5,17 @@ import { changeRoom } from '../scene-manager';
 import { addObjectToInventory, getInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { updateText } from '../../dom/text-update';
 import { cubeRoom1Factory } from './cube-room1';
-import { getTimeline } from '../../state-management/timeline-state';
+import { checkTimeLine, getTimeline } from '../../state-management/timeline-state';
 
 // make the room
 export function artRoom1Factory() {
 
-    console.log(getTimeline(), "get timeline")
     const scene = new THREE.Scene();
-// init scene using three
-// then grap interactionManger
-// give it to the env sphere
     const interactionManager = getInteractionManager();
     environmentSphere(scene, interactionManager);
 
-    // to make the overlocker cube clickable it needs scene and interactionmanager 
     const clickableCube = overlockerCube(scene, interactionManager);
-    // the heater needs scene and interactinon manager as well
     const secondObj = heaterCube(scene, interactionManager);
-    // this just helps position things
     const axesHelper = new THREE.AxesHelper( 5 );
     scene.add( axesHelper );
 
@@ -32,8 +25,10 @@ export function artRoom1Factory() {
     });
     // adding an event listener to the heater so that it console.logs click and also adds shit to the inventory 
     secondObj.addEventListener('click', function (e) {
-        if (!isObjectInInventory("heater, rip")) {
-        addObjectToInventory("heater, rip", "none");
+        if (checkTimeLine("house-1")) {
+            if (!isObjectInInventory("heater, rip")) {
+            addObjectToInventory("heater, rip", 'none')
+            };
         }
     });
 
@@ -85,3 +80,5 @@ function heaterCube(scene, interactionManager) {
 
     return cube;
 };
+
+// these should only add to inventory if you didn't get them the first time, so check for that check inventory should do it

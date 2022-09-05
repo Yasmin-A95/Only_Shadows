@@ -23,7 +23,10 @@ export function cubeRoom1Factory() {
         if (checkTimeLine("house-1")) {
             if (!isObjectInInventory("cube dimensh obj")) {
             addObjectToInventory("cube dimensh obj", "none");
-            };
+            updateText("oh nice a cube dimensh obj, ill have that thanks");
+            } else if (isObjectInInventory) {
+                updateText("I already have this item");
+            }
         }
     });
 

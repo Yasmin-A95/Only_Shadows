@@ -44,7 +44,10 @@ export function artRoom1Factory() {
         if (checkTimeLine("house-1")) {
             if (!isNoteInInventory('you clicked the ipad girl, good job')) {
             addNoteToInventory('you clicked the ipad girl, good job', 'none');
-            };
+            updateText("note reads: you clicked the ipad girl, good job");
+            } else if (isNoteInInventory) {
+                updateText("we've already done this");
+            }
         }
     });
 
@@ -52,6 +55,9 @@ export function artRoom1Factory() {
         if (checkTimeLine("house-1")) {
             if (!isImageInInventory('img src coming soon')) {
             addImageToInventory('img src coming soon', 'icon coming soon')
+            updateText("oh wow an image, great ill pocket that");
+            } else if (isImageInInventory) {
+                updateText("we've already done this");
             };
         }
     });

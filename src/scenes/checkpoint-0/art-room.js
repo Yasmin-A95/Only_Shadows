@@ -45,7 +45,6 @@ export function artRoomFactory() {
             updateText("note reads: you clicked the ipad girl, good job");
             } else if (isNoteInInventory) {
                 updateText("as i said .... note reads: you clicked the ipad girl, good job");
-
             }
         }
     });
@@ -60,7 +59,7 @@ export function artRoomFactory() {
             }
         }
     });
-    
+
     return scene;
 };
 

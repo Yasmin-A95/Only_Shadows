@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import image from '../../assets/images/bubbleroom.jpg';
-import { getInteractionManager } from '../../setup';
+import { getInteractionManager } from '../../init';
 import { changeRoom } from '../scene-manager';
 import { cubeRoomFactory as cubeRoomFactory } from './cube-room';
 import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';

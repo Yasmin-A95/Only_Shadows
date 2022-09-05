@@ -13,6 +13,7 @@ export function cubeRoom1Factory() {
     const clickableEvilCube = evilCube(scene, interactionManager);
     const inventoryRandomObject = randomObj(scene, interactionManager);
     const clickableRandomNote = randomNote(scene, interactionManager);
+    const clickableRandomImg = randomImg(scene, interactionManager);
 
     clickableEvilCube.addEventListener('click', function (e) {
         // changeRoom(cubeRoom1Factory);
@@ -30,6 +31,14 @@ export function cubeRoom1Factory() {
         if (checkTimeLine("house-1")) {
             if (!isNoteInInventory("words")) {
             addNoteToInventory("words", "none")
+            };
+        }
+    });
+
+    clickableRandomImg.addEventListener('click', function (e) {
+        if (checkTimeLine("house-1")) {
+            if(!isImageInInventory("img src cube dim")) {
+            addImageToInventory("img src cube dim", "n")
             };
         }
     });
@@ -70,6 +79,19 @@ function randomNote(scene, interactionManager) {
     const material = new THREE.MeshBasicMaterial({wireframe: true, color: "pink"});
     const cube = new THREE.Mesh( geometry, material );
     cube.position.x = 2.7;
+    cube.position.y = -2;
+    cube.position.z = 3.5;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function randomImg(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(0.4, 0.4, 0.4);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "blue"});
+    const cube = new THREE.Mesh( geometry, material );
+    cube.position.x = 1.4;
     cube.position.y = -2;
     cube.position.z = 3.5;
 

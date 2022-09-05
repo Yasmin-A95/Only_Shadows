@@ -101,4 +101,4 @@ function randomImg(scene, interactionManager) {
     scene.add(cube);
     interactionManager.add(cube);
     return cube;
-}
+};

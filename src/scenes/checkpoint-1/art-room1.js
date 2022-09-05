@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import image from '../../assets/images/bubble1.jpg';
-import { getInteractionManager } from '../../setup';
+import { getInteractionManager } from '../../init';
 import { changeRoom } from '../scene-manager';
 import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { updateText } from '../../dom/text-update';

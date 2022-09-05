@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { updateText } from '../../dom/text-update';
-import { getInteractionManager } from '../../setup';
+import { getInteractionManager } from '../../init';
 import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { checkTimeLine } from '../../state-management/timeline-state';
 

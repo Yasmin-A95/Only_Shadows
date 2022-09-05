@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { updateText } from '../dom/text-update';
 import { getInteractionManager } from '../setup';
+import { artRoomFactory } from './art-room';
 import { changeScene } from './scene-manager';
 
 // const clickableEvilCube = evilCube(scene, interactionManager);
@@ -19,6 +20,7 @@ export function cubeRoomFactory() {
 
     clickableEvilCube.addEventListener('click', function (e) {
         console.log("you did it girl, nice");
+        changeScene(artRoomFactory);
     });
     
     updateText("Welcome to your nightmare");

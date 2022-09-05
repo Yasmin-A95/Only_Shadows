@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import image from '../../assets/images/bubbleroom.jpg';
+import image from '../../assets/images/bubble1.jpg';
 import { getInteractionManager } from '../../setup';
 import { changeRoom } from '../scene-manager';
 import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';

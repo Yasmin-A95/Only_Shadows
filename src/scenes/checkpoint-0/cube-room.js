@@ -3,7 +3,7 @@ import { updateText } from '../../dom/text-update';
 import { getInteractionManager } from '../../setup';
 import { changeCheckpoint } from '../scene-manager';
 import { artRoom1Factory } from '../checkpoint-1/art-room1';
-import { addNoteToInventory, addObjectToInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { checkTimeLine } from '../../state-management/timeline-state';
 export function cubeRoomFactory() {
     const scene = new THREE.Scene();
@@ -13,6 +13,7 @@ export function cubeRoomFactory() {
     const clickableEvilCube = evilCube(scene, interactionManager);
     const inventoryRandomObject = randomObj(scene, interactionManager);
     const clickableRandomNote = randomNote(scene, interactionManager);
+    const clickableRandomImg = randomImg(scene, interactionManager);
 
     clickableEvilCube.addEventListener('click', function (e) {
         changeCheckpoint(artRoom1Factory, "house-1", "artroom-1");
@@ -34,6 +35,14 @@ export function cubeRoomFactory() {
         }
     });
     
+    clickableRandomImg.addEventListener('click', function (e) {
+        if (checkTimeLine("house-0")) {
+            if(!isImageInInventory("img src cube dim")) {
+            addImageToInventory("img src cube dim", "n")
+            };
+        }
+    });
+
     updateText("Welcome to your nightmare");
     return scene;
 };
@@ -80,3 +89,16 @@ function randomNote(scene, interactionManager) {
     interactionManager.add(cube);
     return cube;
 };
+
+function randomImg(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(0.4, 0.4, 0.4);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "blue"});
+    const cube = new THREE.Mesh( geometry, material );
+    cube.position.x = 1.4;
+    cube.position.y = -2;
+    cube.position.z = 3.5;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+}

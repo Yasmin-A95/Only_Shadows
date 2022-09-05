@@ -24,7 +24,6 @@ export function artRoomFactory() {
     });
     secondObj.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
-        console.log(`clicks on heater`); 
         if (!isObjectInInventory("heater, rip")) {
         addObjectToInventory("heater, rip", "none");
         }

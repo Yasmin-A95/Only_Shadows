@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { updateText } from '../../dom/text-update';
 import { getInteractionManager } from '../../setup';
-import { changeCheckpoint } from '../scene-manager';
 
 export function cubeRoom1Factory() {
     const scene = new THREE.Scene();
@@ -12,7 +11,6 @@ export function cubeRoom1Factory() {
     const clickableEvilCube = evilCube(scene, interactionManager);
 
     clickableEvilCube.addEventListener('click', function (e) {
-        console.log("you did it in a new checkpoint girl, nice");
         // changeRoom(cubeRoom1Factory);
     });
     

@@ -11,7 +11,6 @@ export function cubeRoomFactory() {
     const clickableEvilCube = evilCube(scene, interactionManager);
 
     clickableEvilCube.addEventListener('click', function (e) {
-        console.log("you did it girl, nice");
         changeCheckpoint(artRoom1Factory, "house-1", "artroom-1");
     });
     

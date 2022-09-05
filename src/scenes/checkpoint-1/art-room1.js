@@ -32,7 +32,6 @@ export function artRoom1Factory() {
     });
     // adding an event listener to the heater so that it console.logs click and also adds shit to the inventory 
     secondObj.addEventListener('click', function (e) {
-        console.log(`clicks on heater in second art room`); 
         if (!isObjectInInventory("heater, rip")) {
         addObjectToInventory("heater, rip", "none");
         }

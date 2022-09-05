@@ -26,16 +26,17 @@ export function artRoomFactory() {
     });
     secondObj.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
-        if (!isObjectInInventory("heater, rip")) {
-        addObjectToInventory("heater, rip", "none");
+            if (!isObjectInInventory("heater, rip")) {
+            addObjectToInventory("heater, rip", "none");
+            }
         }
-    }
     });
 
     ipadNote.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
-            if (!isNoteInInventory('you clicked the ipad girl, good job'))
+            if (!isNoteInInventory('you clicked the ipad girl, good job')) {
             addNoteToInventory('you clicked the ipad girl, good job', 'none');
+            }
         }
     });
 

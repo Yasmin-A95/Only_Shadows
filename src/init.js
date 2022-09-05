@@ -46,8 +46,18 @@ const clock = new THREE.Clock();
 function animation() {
     interactionManager.update();
 
-    renderer.render( getCurrentScene(), camera );
+    renderer.render(getCurrentScene(), camera);
     firstPersonController.update(clock.getDelta());
+};
+
+// tool bar
+
+const restartButton = document.getElementById('restart-button');
+restartButton.addEventListener('click', handleRestartButton);
+
+export function handleRestartButton(e) {
+    document.getElementById('restart-button');
+    console.log('click happened');
 };
 
 export default init;

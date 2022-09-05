@@ -45,8 +45,11 @@ export function cubeRoomFactory() {
     clickableRandomImg.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
             if(!isImageInInventory("img src cube dim")) {
-            addImageToInventory("img src cube dim", "n")
-            };
+            addImageToInventory("img src cube dim", "n");
+            updateText("oh wow who left an image in this cube dimension");
+            } else if (isImageInInventory) {
+                updateText("I already have this item");
+            }
         }
     });
 

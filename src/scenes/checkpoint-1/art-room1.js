@@ -1,12 +1,16 @@
 import * as THREE from 'three';
 import image from '../../assets/images/bubbleroom.jpg';
 import { getInteractionManager } from '../../setup';
-import { changeCheckpoint, changeScene } from '../scene-manager';
+import { changeRoom } from '../scene-manager';
 import { addObjectToInventory, getInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { updateText } from '../../dom/text-update';
+import { cubeRoom1Factory } from './cube-room1';
+import { getTimeline } from '../../state-management/timeline-state';
 
 // make the room
 export function artRoom1Factory() {
+
+    console.log(getTimeline(), "get timeline")
     const scene = new THREE.Scene();
 // init scene using three
 // then grap interactionManger
@@ -24,11 +28,11 @@ export function artRoom1Factory() {
 
     // adding an event listener to the clickable cube and then it calls a function which switches scenes
     clickableCube.addEventListener('click', function (e) {
-        // changeScene(cubeRoomFactory);
+    changeRoom(cubeRoom1Factory, 'cuberoom-1');
     });
     // adding an event listener to the heater so that it console.logs click and also adds shit to the inventory 
     secondObj.addEventListener('click', function (e) {
-        console.log(`clicks on heater`); 
+        console.log(`clicks on heater in second art room`); 
         if (!isObjectInInventory("heater, rip")) {
         addObjectToInventory("heater, rip", "none");
         }

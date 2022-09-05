@@ -7,7 +7,6 @@ export function getState() {
         timelinePosition: getTimeline()
     }
 };
-
 export function loadGame() {
     if (detectNewGame()) {
         initNewGameState();
@@ -15,7 +14,7 @@ export function loadGame() {
 
     return getState();
 }
-
+console.log(loadGame());
 export function detectNewGame() {
     return !getTimeline();
 }

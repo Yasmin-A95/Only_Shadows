@@ -2,10 +2,10 @@ import * as THREE from 'three';
 import image from '../../assets/images/bubbleroom.jpg';
 import { getInteractionManager } from '../../setup';
 import { changeRoom } from '../scene-manager';
-import { addObjectToInventory, getInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { updateText } from '../../dom/text-update';
 import { cubeRoom1Factory } from './cube-room1';
-import { checkTimeLine, getTimeline } from '../../state-management/timeline-state';
+import { checkTimeLine } from '../../state-management/timeline-state';
 
 // make the room
 export function artRoom1Factory() {
@@ -16,6 +16,7 @@ export function artRoom1Factory() {
 
     const clickableCube = overlockerCube(scene, interactionManager);
     const secondObj = heaterCube(scene, interactionManager);
+    const ipadNote = ipadCube( scene, interactionManager );
     const axesHelper = new THREE.AxesHelper( 5 );
     scene.add( axesHelper );
 
@@ -28,6 +29,14 @@ export function artRoom1Factory() {
         if (checkTimeLine("house-1")) {
             if (!isObjectInInventory("heater, rip")) {
             addObjectToInventory("heater, rip", 'none')
+            };
+        }
+    });
+
+    ipadNote.addEventListener('click', function (e) {
+        if (checkTimeLine("house-1")) {
+            if (!isNoteInInventory('you clicked the ipad girl, good job')) {
+            addNoteToInventory('you clicked the ipad girl, good job', 'none');
             };
         }
     });
@@ -81,4 +90,15 @@ function heaterCube(scene, interactionManager) {
     return cube;
 };
 
-// these should only add to inventory if you didn't get them the first time, so check for that check inventory should do it
+function ipadCube(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, opacity: 0.5});
+    const cube = new THREE.Mesh( geometry, material );
+    cube.position.x = 3.5;
+    cube.position.y = - 3;
+    cube.position.z = -1.9;
+
+    scene.add( cube );
+    interactionManager.add( cube );
+    return cube;
+};

@@ -8,12 +8,10 @@ export function cubeRoomFactory() {
     
     const interactionManager = getInteractionManager();
 
-    // call evilCube giving it scene and interaction manager and assign that to a variable
     const clickableEvilCube = evilCube(scene, interactionManager);
 
     clickableEvilCube.addEventListener('click', function (e) {
         console.log("you did it girl, nice");
-        // TODO add the new art room scene and then name the checkpoint in this function
         changeCheckpoint(artRoom1Factory, "house-1", "artroom-1");
     });
     

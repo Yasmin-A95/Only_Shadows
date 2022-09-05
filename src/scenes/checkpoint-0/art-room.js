@@ -3,35 +3,27 @@ import image from '../../assets/images/bubbleroom.jpg';
 import { getInteractionManager } from '../../setup';
 import { changeRoom } from '../scene-manager';
 import { cubeRoomFactory as cubeRoomFactory } from './cube-room';
-import { addObjectToInventory, getInventory, isObjectInInventory } from '../../state-management/inventory-state';
-import { getTimeline } from '../../state-management/timeline-state';
+import { addObjectToInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { checkTimeLine } from '../../state-management/timeline-state';
 
-// make the room
+
 export function artRoomFactory() {
     const scene = new THREE.Scene();
-// init scene using three
-// then grap interactionManger
-// give it to the env sphere
     const interactionManager = getInteractionManager();
     environmentSphere(scene, interactionManager);
 
-    // to make the overlocker cube clickable it needs scene and interactionmanager 
     const clickableCube = overlockerCube(scene, interactionManager);
-    // the heater needs scene and interactinon manager as well
     const secondObj = heaterCube(scene, interactionManager);
-    // this just helps position things
     const axesHelper = new THREE.AxesHelper( 5 );
     scene.add( axesHelper );
 
-    // adding an event listener to the clickable cube and then it calls a function which switches scenes
     clickableCube.addEventListener('click', function (e) {
-        if (getTimeline().checkPoint === "house-0") {
+        if (checkTimeLine("house-0")) {
         changeRoom(cubeRoomFactory, 'cuberoom-0');
         }
     });
-    // adding an event listener to the heater so that it console.logs click and also adds shit to the inventory 
     secondObj.addEventListener('click', function (e) {
-        if (getTimeline().checkPoint === "house-0") {
+        if (checkTimeLine("house-0")) {
         console.log(`clicks on heater`); 
         if (!isObjectInInventory("heater, rip")) {
         addObjectToInventory("heater, rip", "none");
@@ -58,7 +50,7 @@ function environmentSphere(scene, interactionManager) {
     return mesh;
 };
 
-// making objects
+// making objects // 
 function overlockerCube(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.5 });

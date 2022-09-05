@@ -2,6 +2,14 @@ export function getTimeline() {
     return JSON.parse(localStorage.getItem('timeline'));
 };
 
+export function checkTimeLine(isCheckPoint) {
+    if (getTimeline().checkPoint === isCheckPoint) {
+        return true;
+    } else {
+        return false;
+    };
+};
+
 export function advancePlot(checkPoint) {
     const currentTimeline = getTimeline();
     currentTimeline.checkPoint = checkPoint;

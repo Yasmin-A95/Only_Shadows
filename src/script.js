@@ -1,4 +1,4 @@
-import init, { startGame } from './setup';
+import init, { startGame } from './init';
 import { artRoomFactory as artRoomFactory } from './scenes/checkpoint-0/art-room';
 import './style.css';
 

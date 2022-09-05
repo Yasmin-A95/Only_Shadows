@@ -26,7 +26,7 @@ export function cubeRoomFactory() {
             updateText("oh nice a cube dimensh obj, ill have that thanks");
             } else if (isObjectInInventory) {
                 updateText("I already have this item");
-            }
+            };
         }
     });
 
@@ -38,7 +38,7 @@ export function cubeRoomFactory() {
             } else if (isNoteInInventory) {
                 updateText("note still reads: death is imminent");
 
-            }
+            };
         }
     });
     
@@ -49,7 +49,7 @@ export function cubeRoomFactory() {
             updateText("oh wow who left an image in this cube dimension");
             } else if (isImageInInventory) {
                 updateText("I already have this item");
-            }
+            };
         }
     });
 

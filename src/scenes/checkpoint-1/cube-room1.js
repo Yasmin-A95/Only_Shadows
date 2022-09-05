@@ -26,7 +26,7 @@ export function cubeRoom1Factory() {
             updateText("oh nice a cube dimensh obj, ill have that thanks");
             } else if (isObjectInInventory) {
                 updateText("I already have this item");
-            }
+            };
         }
     });
 
@@ -34,6 +34,10 @@ export function cubeRoom1Factory() {
         if (checkTimeLine("house-1")) {
             if (!isNoteInInventory("words")) {
             addNoteToInventory("words", "none")
+            updateText("note reads: death is imminent");
+            } else if (isNoteInInventory) {
+                updateText("note still reads: death is imminent");
+
             };
         }
     });

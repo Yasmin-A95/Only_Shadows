@@ -8,17 +8,25 @@ import { addObjectToInventory, getInventory, isObjectInInventory } from '../stat
 // make the room
 export function artRoomFactory() {
     const scene = new THREE.Scene();
-
+// init scene using three
+// then grap interactionManger
+// give it to the env sphere
     const interactionManager = getInteractionManager();
     environmentSphere(scene, interactionManager);
 
+    // to make the overlocker cube clickable it needs scene and interactionmanager 
     const clickableCube = overlockerCube(scene, interactionManager);
-    const secondObj = heaterCube(scene, interactionManager)
+    // the heater needs scene and interactinon manager as well
+    const secondObj = heaterCube(scene, interactionManager);
+    // this just helps position things
     const axesHelper = new THREE.AxesHelper( 5 );
     scene.add( axesHelper );
+
+    // adding an event listener to the clickable cube and then it calls a function which switches scenes
     clickableCube.addEventListener('click', function (e) {
         changeScene(cubeRoomFactory);
     });
+    // adding an event listener to the heater so that it console.logs click and also adds shit to the inventory 
     secondObj.addEventListener('click', function (e) {
         console.log(`clicks on heater`); 
         if (!isObjectInInventory("heater, rip")) {

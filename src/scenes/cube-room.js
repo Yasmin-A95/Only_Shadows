@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { updateText } from '../dom/text-update';
 import { getInteractionManager } from '../setup';
-import { artRoomFactory } from './art-room';
+import { artRoomFactory } from './checkpoint-0/art-room';
 import { changeScene } from './scene-manager';
 
 // const clickableEvilCube = evilCube(scene, interactionManager);

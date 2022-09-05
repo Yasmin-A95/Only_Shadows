@@ -1,5 +1,5 @@
 import init, { startGame } from './setup';
-import { artRoomFactory as artRoomFactory } from './scenes/art-room';
+import { artRoomFactory as artRoomFactory } from './scenes/checkpoint-0/art-room';
 import './style.css';
 
 init();

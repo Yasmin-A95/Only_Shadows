@@ -25,16 +25,13 @@ export function artRoomFactory() {
 
     // adding an event listener to the clickable cube and then it calls a function which switches scenes
     clickableCube.addEventListener('click', function (e) {
+        if (getTimeline().checkPoint === "house-0") {
         changeRoom(cubeRoomFactory, 'cuberoom-0');
+        }
     });
     // adding an event listener to the heater so that it console.logs click and also adds shit to the inventory 
     secondObj.addEventListener('click', function (e) {
         if (getTimeline().checkPoint === "house-0") {
-        // console.log(timeline, " timeline");
-
-        console.log(`${getTimeline().checkPoint === 'house-0'}`, "  checkpoint");
-        //checkPoint: 'house-0', room: 'artroom-0'}
-        //if (checkPoint.)
         console.log(`clicks on heater`); 
         if (!isObjectInInventory("heater, rip")) {
         addObjectToInventory("heater, rip", "none");

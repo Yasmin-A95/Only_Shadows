@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { FirstPersonControls } from './lib/controls';
 import { getCurrentScene, changeScene } from './scenes/scene-manager';
 import { InteractionManager } from "three.interactive";
-import { loadGame } from './state-management/game-state';
+import { loadGame, initNewGameState } from './state-management/game-state';
 
 let camera, renderer, firstPersonController, interactionManager;
 
@@ -56,8 +56,7 @@ const restartButton = document.getElementById('restart-button');
 restartButton.addEventListener('click', handleRestartButton);
 
 export function handleRestartButton(e) {
-    document.getElementById('restart-button');
-    console.log('click happened');
-};
+    initNewGameState();
 
+};
 export default init;

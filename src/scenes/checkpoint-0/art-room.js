@@ -3,7 +3,7 @@ import image from '../../assets/images/bubbleroom.jpg';
 import { getInteractionManager } from '../../init';
 import { changeRoom } from '../scene-manager';
 import { cubeRoomFactory as cubeRoomFactory } from './cube-room';
-import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { addToInventoryDisplay, addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { checkTimeLine } from '../../state-management/timeline-state';
 import { updateText } from '../../dom/text-update';
 
@@ -30,8 +30,9 @@ export function artRoomFactory() {
     secondObj.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
             if (!isObjectInInventory("heater, rip")) {
-            addObjectToInventory("heater, rip", "none");
+            addObjectToInventory("heater, rip", "none"); 
             updateText("nice, a warm heater");
+            addToInventoryDisplay('object');
             } else if (isObjectInInventory("heater, rip")) {
                 updateText("as I said ... nice, a warm heater");
             };

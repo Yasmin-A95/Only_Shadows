@@ -23,3 +23,20 @@
 .hidden {
     display: none;
 }
+
+#tool-bar {
+    background-color: yellow;
+    position: fixed;
+    right: 0;
+    left: 0;
+    border: 1px solid black;
+    height: 2rem;
+}
+
+#restart-button {
+    background-color: pink;
+}
+
+.icon {
+    max-height: 2rem;
+}

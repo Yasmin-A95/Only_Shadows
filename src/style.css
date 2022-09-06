@@ -23,3 +23,29 @@
 .hidden {
     display: none;
 }
+
+#tool-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: fixed;
+    right: 0;
+    left: 0;
+    border: 1px solid black;
+    height: 2rem;
+    min-width: 100%
+}
+
+#inventory-display {
+    display: flex;
+    background-color: purple;
+    min-height: 2rem;
+    min-width: 100%
+}
+#restart-button {
+    background-color: pink;
+}
+
+.icon {
+    max-height: 2rem;
+}

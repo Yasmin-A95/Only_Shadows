@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { updateText } from '../../dom/text-update';
 import { getInteractionManager } from '../../init';
-import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { addToInventoryDisplay, addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { checkTimeLine } from '../../state-management/timeline-state';
 
 export function cubeRoom1Factory() {
@@ -24,6 +24,7 @@ export function cubeRoom1Factory() {
             if (!isObjectInInventory("cube dimensh obj")) {
             addObjectToInventory("cube dimensh obj", "none");
             updateText("oh nice a cube dimensh obj, ill have that thanks");
+            addToInventoryDisplay('object');
             } else if (isObjectInInventory) {
                 updateText("I already have this item");
             };
@@ -35,6 +36,7 @@ export function cubeRoom1Factory() {
             if (!isNoteInInventory("words")) {
             addNoteToInventory("words", "none")
             updateText("note reads: death is imminent");
+            addToInventoryDisplay("note");
             } else if (isNoteInInventory) {
                 updateText("note still reads: death is imminent");
 

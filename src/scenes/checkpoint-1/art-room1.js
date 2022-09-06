@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import image from '../../assets/images/bubble1.jpg';
 import { getInteractionManager } from '../../init';
 import { changeRoom } from '../scene-manager';
-import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { addToInventoryDisplay, addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { updateText } from '../../dom/text-update';
 import { cubeRoom1Factory } from './cube-room1';
 import { checkTimeLine } from '../../state-management/timeline-state';
@@ -33,6 +33,7 @@ export function artRoom1Factory() {
             if (!isObjectInInventory("heater, rip")) {
             addObjectToInventory("heater, rip", 'none')
             updateText("nice, a warm heater");
+            addToInventoryDisplay('object');
             } else if (isObjectInInventory) {
                 updateText("we've been through this already, get over the heater");
 
@@ -45,6 +46,7 @@ export function artRoom1Factory() {
             if (!isNoteInInventory('you clicked the ipad girl, good job')) {
             addNoteToInventory('you clicked the ipad girl, good job', 'none');
             updateText("note reads: you clicked the ipad girl, good job");
+            addToInventoryDisplay("note");
             } else if (isNoteInInventory) {
                 updateText("we've already done this");
             }

@@ -33,6 +33,7 @@ export function artRoom1Factory() {
             if (!isObjectInInventory("heater, rip")) {
             addObjectToInventory("heater, rip", 'none')
             updateText("nice, a warm heater");
+            addToInventoryDisplay('object');
             } else if (isObjectInInventory) {
                 updateText("we've been through this already, get over the heater");
 

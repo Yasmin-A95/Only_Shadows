@@ -3,7 +3,7 @@ import { updateText } from '../../dom/text-update';
 import { getInteractionManager } from '../../init';
 import { changeCheckpoint } from '../scene-manager';
 import { artRoom1Factory } from '../checkpoint-1/art-room1';
-import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { addToInventoryDisplay, addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { checkTimeLine } from '../../state-management/timeline-state';
 export function cubeRoomFactory() {
     const scene = new THREE.Scene();
@@ -24,6 +24,7 @@ export function cubeRoomFactory() {
             if (!isObjectInInventory("cube dimensh obj")) {
             addObjectToInventory("cube dimensh obj", "none");
             updateText("oh nice a cube dimensh obj, ill have that thanks");
+            addToInventoryDisplay('object');
             } else if (isObjectInInventory) {
                 updateText("I already have this item");
             };

@@ -57,6 +57,7 @@ restartButton.addEventListener('click', handleRestartButton);
 
 export function handleRestartButton(e) {
     initNewGameState();
+    window.location.reload();
 
 };
 export default init;

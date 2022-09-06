@@ -44,6 +44,7 @@ export function artRoomFactory() {
             if (!isNoteInInventory('you clicked the ipad girl, good job')) {
             addNoteToInventory('you clicked the ipad girl, good job', 'none');
             updateText("note reads: you clicked the ipad girl, good job");
+            addToInventoryDisplay("note");
             } else if (isNoteInInventory) {
                 updateText("as i said .... note reads: you clicked the ipad girl, good job");
             }

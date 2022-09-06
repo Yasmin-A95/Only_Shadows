@@ -1,4 +1,5 @@
-import gemicon  from '../assets/icons/gem-icon.jpg'
+import gemicon from '../assets/icons/gem-icon.jpg';
+import noteicon from '../assets/icons/note-icon.jpg';
 
 export function getInventory() {
     return JSON.parse(localStorage.getItem('inventory'));
@@ -84,6 +85,8 @@ export function addToInventoryDisplay(inventoryItem) {
     // img.src =
     if (inventoryItem === "object") {
         newImg.src = gemicon;
+    } else if (inventoryItem === "note") {
+        newImg.src = noteicon;
     }
 
     newInventoryItem.appendChild(newImg);

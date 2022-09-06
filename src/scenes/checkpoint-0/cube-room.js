@@ -36,6 +36,7 @@ export function cubeRoomFactory() {
             if (!isNoteInInventory("words")) {
             addNoteToInventory("words", "none")
             updateText("note reads: death is imminent");
+            addToInventoryDisplay("note");
             } else if (isNoteInInventory) {
                 updateText("note still reads: death is imminent");
 

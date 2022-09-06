@@ -56,6 +56,7 @@ export function artRoomFactory() {
             if (!isImageInInventory('img src coming soon')) {
             addImageToInventory('img src coming soon', 'icon coming soon')
             updateText("oh wow an image, great ill pocket that");
+            addToInventoryDisplay("image");
             } else if (isImageInInventory) {
                 updateText("I already have this item");
             }

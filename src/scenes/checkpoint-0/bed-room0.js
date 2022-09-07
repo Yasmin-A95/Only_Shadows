@@ -1,7 +1,7 @@
 // init room
 import * as THREE from 'three';
 import { getInteractionManager } from "../../init";
-import bedRoomEnvironmentImage from '../../assets/images/bedroom0trippy.jpg';
+import bedRoomEnvironmentImage from '../../assets/images/bedroom1.jpg';
 import { addNoteToInventory, isNoteInInventory } from '../../state-management/inventory-state';
 import { updateText } from '../../dom/text-update';
 
@@ -9,6 +9,10 @@ import { updateText } from '../../dom/text-update';
 import objectIcon from '../../assets/icons/object-gem-icon.jpg';
 import noteicon from '../../assets/icons/note-icon.jpg';
 import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
+
+// camera for debugging / dev
+
+import { getCamera } from '../../init';
 
 export function bedRoomFactory() {
 
@@ -24,7 +28,8 @@ export function bedRoomFactory() {
 
     const axesHelper = new THREE.AxesHelper(5);
     scene.add(axesHelper);
-
+    // const camera = getCamera();
+    // camera.lookAt(clickableNote.position); ??? why
     return scene;
 };
 
@@ -66,7 +71,7 @@ function diaryState() {
         addNoteToInventory("some more plotline will be found here", noteicon)
         updateText("note reads: blah blah blah");
     } else if (isNoteInInventory("some more plotline will be found here")) {
-        console.log(isNoteInInventory("some more plotline will be found here"))
+        (isNoteInInventory("some more plotline will be found here"))
         updateText("note still reads: blah blah blah");
     };
 };

@@ -59,4 +59,8 @@ export function handleRestartButton(e) {
     initNewGameState();
     window.location.reload();
 };
+
+export function getCamera() {
+    return camera;
+}
 export default init;

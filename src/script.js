@@ -1,7 +1,7 @@
 import init, { startGame } from './init';
 import { bossFightFactory } from './scenes/boss-fight/stage0';
 import { bossFight2Factory } from './scenes/boss-fight/stage2';
-import { bossFight1Factory } from './scenes/boss-fight/state1';
+import { bossFight1Factory } from './scenes/boss-fight/stage1';
 import { bedRoomFactory } from './scenes/checkpoint-0/bed-room0';
 // import { artRoomFactory as artRoomFactory } from './scenes/checkpoint-0/art-room';
 import { cubeRoomFactory } from './scenes/checkpoint-0/cube-room';
@@ -10,6 +10,9 @@ import { bedRoom1Factory } from './scenes/checkpoint-1/bed-room1';
 import { bedRoom2Factory } from './scenes/checkpoint-2/bed-room2';
 import { getTimeline } from './state-management/timeline-state';
 import './style.css';
+import { bossFight3Factory } from './scenes/boss-fight/stage3';
+import { bossFight4Factory } from './scenes/boss-fight/stage4';
+import { bossFight5Factory } from './scenes/boss-fight/stage5';
 
 init();
 
@@ -23,7 +26,7 @@ init();
 // const position = getTimeline();
 // startGame(scenes[position.checkPoint][position.room]);
 
-startGame(bossFight2Factory)
+startGame(bossFight5Factory)
 // TODO: make a main screen if time permits ..... lol
 
 // TODO: to make a new game button a button on the dom maybe in the uppy nav bar kind of section would call localstorage.clear() and window.refresh or whatever to auto refresh - yeah

@@ -2,6 +2,8 @@ import init, { startGame } from './init';
 import { bedRoomFactory } from './scenes/checkpoint-0/bed-room0';
 // import { artRoomFactory as artRoomFactory } from './scenes/checkpoint-0/art-room';
 import { cubeRoomFactory } from './scenes/checkpoint-0/cube-room';
+import { loungeRoomFactory } from './scenes/checkpoint-0/lounge-room0';
+import { bedRoom1Factory } from './scenes/checkpoint-1/bed-room1';
 import { getTimeline } from './state-management/timeline-state';
 import './style.css';
 
@@ -17,7 +19,7 @@ init();
 // const position = getTimeline();
 // startGame(scenes[position.checkPoint][position.room]);
 
-startGame(bedRoomFactory)
+startGame(bedRoom1Factory)
 // TODO: make a main screen if time permits ..... lol
 
 // TODO: to make a new game button a button on the dom maybe in the uppy nav bar kind of section would call localstorage.clear() and window.refresh or whatever to auto refresh - yeah

@@ -16,20 +16,22 @@ import { bossFight5Factory } from './scenes/boss-fight/stage5';
 import { bossFight6Factory } from './scenes/boss-fight/stage6';
 import { bossFight7Factory } from './scenes/boss-fight/stage7';
 import { bossFight8Factory } from './scenes/boss-fight/stage8';
+import { bossFight9Factory } from './scenes/boss-fight/stage9';
+import { bossFight10Factory } from './scenes/boss-fight/stage10';
 
 init();
 
-// const scenes = {
-//     'house-0': {
-//         'artroom-0': artRoomFactory,
-//         'cuberoom-0': cubeRoomFactory
-//     }
-// }
-// // calling get timeline gets me the correct position
-// const position = getTimeline();
-// startGame(scenes[position.checkPoint][position.room]);
+const scenes = {
+    'house-0': {
+        'artroom-0': artRoomFactory,
+        'cuberoom-0': cubeRoomFactory
+    }
+}
+// calling get timeline gets me the correct position
+const position = getTimeline();
+startGame(scenes[position.checkPoint][position.room]);
 
-startGame(bossFight8Factory)
+//startGame(bossFight10Factory)
 // TODO: make a main screen if time permits ..... lol
 
 // TODO: to make a new game button a button on the dom maybe in the uppy nav bar kind of section would call localstorage.clear() and window.refresh or whatever to auto refresh - yeah

@@ -40,14 +40,24 @@ startGame(scenes[position.checkPoint][position.room]);
 //startGame(bossFight10Factory)
 // TODO: make a main screen if time permits ..... lol
 
-// TODO: to make a new game button a button on the dom maybe in the uppy nav bar kind of section would call localstorage.clear() and window.refresh or whatever to auto refresh - yeah
-
-// TODO: now i need autosave between checkPoints 
-
 // TODO: Loading screen
 
 // TODO: Show Inventory Items
 
-// TODO: restart game button 
-
 // TODO: the art part 
+
+// TODO: stupid easter eggs
+
+// TODO: add the other bubble rooms for roaming
+
+// TODO: fix timelines and make the storyline more tangiable
+
+// TODO: fix the hideous CSS
+
+// TODO: display inventory items 
+
+// TODO: make the inventory items a meaningful means for achieving goals
+
+// TODO: cut scenes
+
+// TODO: better image manipulation algorithm

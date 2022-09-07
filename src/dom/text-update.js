@@ -30,7 +30,7 @@ export function autoSavetext() {
     const autoSaveText = document.getElementById('autosave');
     autoSaveText.innerText = "Auto Save ...";
     // use a settimeout to have it deleted after like 10 seconds or like two or something
-    setTimeout(clearAutoSaveText, 5000);
+    setTimeout(clearAutoSaveText, 3500);
 
     function clearAutoSaveText() {
         autoSaveText.innerText = "";

@@ -8,6 +8,10 @@ import { updateText } from '../../dom/text-update';
 import objectIcon from '../../assets/icons/object-gem-icon.jpg';
 import noteicon from '../../assets/icons/note-icon.jpg';
 import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
+import { checkTimeLine } from '../../state-management/timeline-state';
+import { changeCheckpoint } from '../scene-manager';
+import { artRoom1Factory } from '../checkpoint-1/art-room1';
+import { bedRoom1Factory } from '../checkpoint-1/bed-room1';
 
 
 export function loungeRoomFactory() {
@@ -18,10 +22,14 @@ export function loungeRoomFactory() {
 
     const clickableRandomObj = randomObject(scene, interactionManager);
     const clickableRandomImage = randomImage(scene, interactionManager);
+    const clickableDoor = door(scene, interactionManager);
+
 
     clickableRandomObj.addEventListener('click', randomObjectState);
     clickableRandomImage.addEventListener('click', randomImageState);
+    clickableDoor.addEventListener('click', doorState);
 
+    updateText("");
     return scene;
 };
 
@@ -91,3 +99,23 @@ function randomImageState() {
         updateText("Yeah, been there done that");
     };
 };
+
+function door(scene, interactionManager) {
+
+    const geometry = new THREE.BoxGeometry(2, 5, 2);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "pink" });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = -0.9;
+    cube.position.y = -1.4;
+    cube.position.z = -4;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function doorState() {
+    if (checkTimeLine("house-0")) {
+        changeCheckpoint(bedRoom1Factory, "house-1", "bed-room1");
+    }
+}

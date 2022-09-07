@@ -14,6 +14,7 @@ export function bedRoom2Factory() {
     cliclableMicaela.addEventListener('click', micaelaState);
 
     //TODO- clicking bed redirects to next scene
+    updateText("scary stuff");
     return scene;
 };
 

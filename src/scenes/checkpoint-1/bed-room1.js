@@ -1,6 +1,10 @@
 import * as THREE from 'three';
 import bedRoomEnvironmentImage from '../../assets/images/bedroom1trippy.jpg';
+import { updateText } from '../../dom/text-update';
 import { getInteractionManager } from '../../init';
+import { checkTimeLine } from '../../state-management/timeline-state';
+import { bedRoom2Factory } from '../checkpoint-2/bed-room2';
+import { changeCheckpoint } from '../scene-manager';
 
 export function bedRoom1Factory() {
 
@@ -9,7 +13,8 @@ export function bedRoom1Factory() {
     bedRoomSphere(scene, interactionManager);
     const cliclablebed = bed(scene, interactionManager);
 
-    //TODO- clicking bed redirects to next scene
+    cliclablebed.addEventListener('click', bedState);
+    updateText("zzzzz");
     return scene;
 };
 
@@ -40,4 +45,10 @@ function bed(scene, interactionManager) {
     scene.add(cube);
     interactionManager.add(cube);
     return cube;
+};
+
+function bedState() {
+    if (checkTimeLine("house-1")) {
+        changeCheckpoint(bedRoom2Factory, "house-2", "bed-room2");
+    }
 };

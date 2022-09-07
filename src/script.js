@@ -25,6 +25,12 @@ const scenes = {
     'house-0': {
         'bed-room0': bedRoomFactory,
         'lounge-room0': loungeRoomFactory
+    },
+    'house-1': {
+        'bed-room1': bedRoom1Factory
+    },
+    'house-2': {
+        'bed-room2': bedRoom2Factory
     }
 }
 // calling get timeline gets me the correct position

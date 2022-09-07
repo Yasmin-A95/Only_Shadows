@@ -7,7 +7,12 @@ import { updateText } from '../../dom/text-update';
 import { cubeRoom1Factory } from './cube-room1';
 import { checkTimeLine } from '../../state-management/timeline-state';
 
-// make the room
+
+// icons
+import objectIcon from '../../assets/icons/object-gem-icon.jpg';
+import noteicon from '../../assets/icons/note-icon.jpg';
+import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
+
 export function artRoom1Factory() {
 
     const scene = new THREE.Scene();
@@ -31,7 +36,7 @@ export function artRoom1Factory() {
     secondObj.addEventListener('click', function (e) {
         if (checkTimeLine("house-1")) {
             if (!isObjectInInventory("heater, rip")) {
-                addObjectToInventory("heater, rip", 'none')
+                addObjectToInventory("heater, rip", objectIcon)
                 updateText("nice, a warm heater");
             } else if (isObjectInInventory) {
                 updateText("we've been through this already, get over the heater");
@@ -43,7 +48,7 @@ export function artRoom1Factory() {
     ipadNote.addEventListener('click', function (e) {
         if (checkTimeLine("house-1")) {
             if (!isNoteInInventory('you clicked the ipad girl, good job')) {
-                addNoteToInventory('you clicked the ipad girl, good job', 'none');
+                addNoteToInventory('you clicked the ipad girl, good job', noteicon);
                 updateText("note reads: you clicked the ipad girl, good job");
             } else if (isNoteInInventory) {
                 updateText("we've already done this");
@@ -54,7 +59,7 @@ export function artRoom1Factory() {
     jumperCubeImg.addEventListener('click', function (e) {
         if (checkTimeLine("house-1")) {
             if (!isImageInInventory('img src coming soon')) {
-                addImageToInventory('img src coming soon', 'icon coming soon')
+                addImageToInventory('img src coming soon', imageIcon)
                 updateText("oh wow an image, great ill pocket that");
             } else if (isImageInInventory) {
                 updateText("we've already done this");

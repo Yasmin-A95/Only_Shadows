@@ -23,7 +23,7 @@ export function detectNewGame() {
 export function initNewGameState() {
     saveTimeline({
         checkPoint: "house-0",
-        room: "artroom-0"
+        room: "bed-room0"
     });
 
     saveInventory([]);

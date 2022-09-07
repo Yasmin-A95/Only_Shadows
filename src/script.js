@@ -3,7 +3,7 @@ import { bossFightFactory } from './scenes/boss-fight/stage0';
 import { bossFight2Factory } from './scenes/boss-fight/stage2';
 import { bossFight1Factory } from './scenes/boss-fight/stage1';
 import { bedRoomFactory } from './scenes/checkpoint-0/bed-room0';
-// import { artRoomFactory as artRoomFactory } from './scenes/checkpoint-0/art-room';
+import { artRoomFactory as artRoomFactory } from './scenes/checkpoint-0/art-room';
 import { cubeRoomFactory } from './scenes/checkpoint-0/cube-room';
 import { loungeRoomFactory } from './scenes/checkpoint-0/lounge-room0';
 import { bedRoom1Factory } from './scenes/checkpoint-1/bed-room1';
@@ -23,8 +23,8 @@ init();
 
 const scenes = {
     'house-0': {
-        'artroom-0': artRoomFactory,
-        'cuberoom-0': cubeRoomFactory
+        'bed-room0': bedRoomFactory,
+        'lounge-room0': loungeRoomFactory
     }
 }
 // calling get timeline gets me the correct position

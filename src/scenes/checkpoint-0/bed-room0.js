@@ -1,7 +1,7 @@
 // init room
 import * as THREE from 'three';
 import { getInteractionManager } from "../../init";
-import bedRoomEnvironmentImage from '../../assets/images/bedroom1.jpg';
+import bedRoomEnvironmentImage from '../../assets/images/bedroom0.jpg';
 import { addNoteToInventory, isNoteInInventory } from '../../state-management/inventory-state';
 import { updateText } from '../../dom/text-update';
 
@@ -13,6 +13,9 @@ import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
 // camera for debugging / dev
 
 import { getCamera } from '../../init';
+import { loungeRoomFactory } from './lounge-room0';
+import { checkTimeLine } from '../../state-management/timeline-state';
+import { changeRoom } from '../scene-manager';
 
 export function bedRoomFactory() {
 
@@ -22,9 +25,11 @@ export function bedRoomFactory() {
 
     const clickableDiary = diaryCube(scene, interactionManager);
     const clickableNote = bedroomVanityNote(scene, interactionManager);
+    const clickableDoor = door(scene, interactionManager);
 
     clickableDiary.addEventListener('click', diaryState);
     clickableNote.addEventListener('click', bedroomVanityNoteState);
+    clickableDoor.addEventListener('click', doorState);
 
     const axesHelper = new THREE.AxesHelper(5);
     scene.add(axesHelper);
@@ -100,3 +105,23 @@ function bedroomVanityNoteState() {
         updateText("note still reads: death is imminent");
     };
 };
+
+function door(scene, interactionManager) {
+
+    const geometry = new THREE.BoxGeometry(2, 5, 2);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "pink" });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = -2;
+    cube.position.y = -1.4;
+    cube.position.z = 3;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function doorState() {
+    if (checkTimeLine("house-0")) {
+        changeRoom(loungeRoomFactory, 'lounge-room0');
+    }
+}

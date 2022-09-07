@@ -8,9 +8,9 @@ import { checkTimeLine } from '../../state-management/timeline-state';
 import { updateText } from '../../dom/text-update';
 
 // icons
-import gemicon from '../../assets/icons/gem-icon.jpg';
+import objectIcon from '../../assets/icons/object-gem-icon.jpg';
 import noteicon from '../../assets/icons/note-icon.jpg';
-import polaroidicon from '../../assets/icons/polaroid-icon.jpg'
+import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
 
 export function artRoomFactory() {
     const scene = new THREE.Scene();
@@ -33,7 +33,7 @@ export function artRoomFactory() {
     secondObj.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
             if (!isObjectInInventory("heater, rip")) {
-                addObjectToInventory("heater, rip", gemicon);
+                addObjectToInventory("heater, rip", objectIcon);
                 updateText("nice, a warm heater");
             } else if (isObjectInInventory("heater, rip")) {
                 updateText("as I said ... nice, a warm heater");
@@ -55,7 +55,7 @@ export function artRoomFactory() {
     jumperCubeImg.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
             if (!isImageInInventory('img src coming soon')) {
-                addImageToInventory('img src coming soon', polaroidicon)
+                addImageToInventory('img src coming soon', imageIcon)
                 updateText("oh wow an image, great ill pocket that");
             } else if (isImageInInventory) {
                 updateText("I already have this item");

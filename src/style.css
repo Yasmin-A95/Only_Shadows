@@ -5,13 +5,13 @@
 }
 
 #text-display {
+    font-size: 2vw;
     position: fixed;
     bottom: 2%;
     left: 2%;
     right: 2%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 3%;
-    font-size: 2vw;
     color: white;
     line-height: 1.5em;
     text-overflow: ellipsis;
@@ -49,4 +49,11 @@
 
 .icon {
     max-height: 2rem;
+}
+
+#autosave {
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: lime;
 }

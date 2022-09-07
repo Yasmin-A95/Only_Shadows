@@ -21,3 +21,18 @@ export function updateText(str) {
     clearText();
     replaceText(str);
 }
+
+// TODO autosave text update function
+
+// TODO call it from the relevent places i.e. when changing timeline stuff so loadRoom changeCheckpoint should trigger autosave
+
+export function autoSavetext() {
+    const autoSaveText = document.getElementById('autosave');
+    autoSaveText.innerText = "Auto Save ...";
+    // use a settimeout to have it deleted after like 10 seconds or like two or something
+    setTimeout(clearAutoSaveText, 5000);
+
+    function clearAutoSaveText() {
+        autoSaveText.innerText = "";
+    };
+};

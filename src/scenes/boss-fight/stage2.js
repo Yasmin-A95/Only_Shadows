@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { getInteractionManager } from "../../init";
-import bossFightEnvironmentImage from '../../assets/images/bossfight1.jpg';
+import bossFightEnvironmentImage from '../../assets/images/bossfight2.jpg';
 import { updateText } from '../../dom/text-update';
 
 export function bossFight2Factory() {
@@ -38,7 +38,7 @@ function boss(scene, interactionManager) {
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 4.6;
     cube.position.y = -1.5;
-    cube.position.z = 0.3;
+    cube.position.z = - 0.4;
 
     scene.add(cube);
     interactionManager.add(cube);

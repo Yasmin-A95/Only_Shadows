@@ -20,6 +20,8 @@ export function updateText(str) {
 
     clearText();
     replaceText(str);
+    // and have it go away after a sec
+    setTimeout(clearText, 3500)
 };
 
 export function autoSavetext() {

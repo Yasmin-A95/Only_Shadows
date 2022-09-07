@@ -56,4 +56,18 @@
     right: 0;
     position: absolute;
     background-color: lime;
+    /* transform: scale(0, 0);
+    transition: transform 0.3s; the css doesn't like this for some reason.
+    bleh 
+    TODO work out why */
 }
+
+/*
+use something like this for hovering over clickable items
+
+.item:hover .text
+{
+    opacity: 1;
+}
+
+*/

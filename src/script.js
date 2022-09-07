@@ -18,13 +18,15 @@ import { bossFight7Factory } from './scenes/boss-fight/stage7';
 import { bossFight8Factory } from './scenes/boss-fight/stage8';
 import { bossFight9Factory } from './scenes/boss-fight/stage9';
 import { bossFight10Factory } from './scenes/boss-fight/stage10';
+import { bathRoomFactory } from './scenes/checkpoint-0/bath-room0';
 
 init();
 
 const scenes = {
     'house-0': {
         'bed-room0': bedRoomFactory,
-        'lounge-room0': loungeRoomFactory
+        'lounge-room0': loungeRoomFactory,
+        'bath-room0': bathRoomFactory
     },
     'house-1': {
         'bed-room1': bedRoom1Factory
@@ -35,9 +37,9 @@ const scenes = {
 }
 // calling get timeline gets me the correct position
 const position = getTimeline();
-startGame(scenes[position.checkPoint][position.room]);
+//startGame(scenes[position.checkPoint][position.room]);
 
-//startGame(bossFight10Factory)
+startGame(bathRoomFactory)
 // TODO: make a main screen if time permits ..... lol
 
 // TODO: Loading screen

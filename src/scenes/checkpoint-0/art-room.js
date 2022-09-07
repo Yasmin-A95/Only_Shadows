@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import image from '../../assets/images/bubbleroom.jpg';
+import roomImage from '../../assets/images/bubbleroom.jpg';
 import { getInteractionManager } from '../../init';
 import { changeRoom } from '../scene-manager';
 import { cubeRoomFactory as cubeRoomFactory } from './cube-room';
@@ -70,7 +70,7 @@ function environmentSphere(scene, interactionManager) {
     const geometry = new THREE.SphereGeometry(5, 32, 16);
     const material = new THREE.MeshBasicMaterial({
         map: new THREE.TextureLoader().load(
-            image
+            roomImage
         )
     });
 

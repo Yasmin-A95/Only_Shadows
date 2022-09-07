@@ -7,17 +7,18 @@ export function getState() {
         timelinePosition: getTimeline()
     }
 };
+
 export function loadGame() {
     if (detectNewGame()) {
         initNewGameState();
     }
 
     return getState();
-}
+};
 
 export function detectNewGame() {
     return !getTimeline();
-}
+};
 
 export function initNewGameState() {
     saveTimeline({

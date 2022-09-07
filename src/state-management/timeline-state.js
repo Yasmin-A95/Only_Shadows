@@ -9,6 +9,11 @@ export function checkTimeLine(isCheckPoint) {
         return false;
     };
 };
+console.log(getTimeline())
+console.log(getTimeline())
+let timeline = getTimeline();
+console.log(timeline)
+console.log(timeline.checkPoint)
 
 export function advancePlot(checkPoint) {
     const currentTimeline = getTimeline();

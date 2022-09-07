@@ -14,7 +14,7 @@ export function loadGame() {
 
     return getState();
 }
-console.log(loadGame());
+
 export function detectNewGame() {
     return !getTimeline();
 }

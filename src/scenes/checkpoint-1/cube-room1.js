@@ -1,12 +1,12 @@
 import * as THREE from 'three';
 import { updateText } from '../../dom/text-update';
 import { getInteractionManager } from '../../init';
-import { addToInventoryDisplay, addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
+import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { checkTimeLine } from '../../state-management/timeline-state';
 
 export function cubeRoom1Factory() {
     const scene = new THREE.Scene();
-    
+
     const interactionManager = getInteractionManager();
 
     // call evilCube giving it scene and interaction manager and assign that to a variable
@@ -22,9 +22,8 @@ export function cubeRoom1Factory() {
     inventoryRandomObject.addEventListener('click', function (e) {
         if (checkTimeLine("house-1")) {
             if (!isObjectInInventory("cube dimensh obj")) {
-            addObjectToInventory("cube dimensh obj", "none");
-            updateText("oh nice a cube dimensh obj, ill have that thanks");
-            addToInventoryDisplay('object');
+                addObjectToInventory("cube dimensh obj", "none");
+                updateText("oh nice a cube dimensh obj, ill have that thanks");
             } else if (isObjectInInventory) {
                 updateText("I already have this item");
             };
@@ -34,9 +33,8 @@ export function cubeRoom1Factory() {
     clickableRandomNote.addEventListener('click', function (e) {
         if (checkTimeLine("house-1")) {
             if (!isNoteInInventory("words")) {
-            addNoteToInventory("words", "none")
-            updateText("note reads: death is imminent");
-            addToInventoryDisplay("note");
+                addNoteToInventory("words", "none")
+                updateText("note reads: death is imminent");
             } else if (isNoteInInventory) {
                 updateText("note still reads: death is imminent");
 
@@ -46,27 +44,27 @@ export function cubeRoom1Factory() {
 
     clickableRandomImg.addEventListener('click', function (e) {
         if (checkTimeLine("house-1")) {
-            if(!isImageInInventory("img src cube dim")) {
-            addImageToInventory("img src cube dim", "n")
-            updateText("oh wow who left an image in this cube dimension");
+            if (!isImageInInventory("img src cube dim")) {
+                addImageToInventory("img src cube dim", "n")
+                updateText("oh wow who left an image in this cube dimension");
             } else if (isImageInInventory) {
                 updateText("I already have this item");
             };
         }
     });
-    
+
     updateText("Escape is no longer an option");
     return scene;
 };
 
 function evilCube(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial( { color: "yellow" } );
+    const material = new THREE.MeshBasicMaterial({ color: "yellow" });
     const evilCube = new THREE.Mesh(geometry, material);
     evilCube.position.x = 2;
     evilCube.position.y = -2;
     evilCube.position.z = 2;
-    
+
     scene.add(evilCube);
     interactionManager.add(evilCube);
 
@@ -75,8 +73,8 @@ function evilCube(scene, interactionManager) {
 
 function randomObj(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(0.6, 0.6, 0.6);
-    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "yellow"});
-    const cube = new THREE.Mesh( geometry, material );
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "yellow" });
+    const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 3;
     cube.position.y = -2;
     cube.position.z = 3;
@@ -88,8 +86,8 @@ function randomObj(scene, interactionManager) {
 
 function randomNote(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "pink"});
-    const cube = new THREE.Mesh( geometry, material );
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "pink" });
+    const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 2.7;
     cube.position.y = -2;
     cube.position.z = 3.5;
@@ -101,8 +99,8 @@ function randomNote(scene, interactionManager) {
 
 function randomImg(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(0.4, 0.4, 0.4);
-    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "blue"});
-    const cube = new THREE.Mesh( geometry, material );
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "blue" });
+    const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 1.4;
     cube.position.y = -2;
     cube.position.z = 3.5;

@@ -23,7 +23,7 @@ export function cubeRoomFactory() {
     const clickableRandomImg = randomImg(scene, interactionManager);
 
     clickableEvilCube.addEventListener('click', function (e) {
-        changeCheckpoint(artRoom1Factory, "house-1", "artroom-1");
+        //changeCheckpoint(artRoom1Factory, "house-1", "artroom-1");
     });
 
     inventoryRandomObject.addEventListener('click', function (e) {

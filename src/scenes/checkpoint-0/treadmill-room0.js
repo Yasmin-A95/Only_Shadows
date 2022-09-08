@@ -16,10 +16,12 @@ export function treadMillRoomFactory() {
     const interactionManager = getInteractionManager();
     treadMillRoomEnvironmentSphere(scene, interactionManager);
     const clickableTreadmill = treadmill(scene, interactionManager);
-    const loungeEntrance = moveTolounge(scene, interactionManager);
+    const clickableLoungeEntrance = moveTolounge(scene, interactionManager);
+    const clickableKithcenEntrace = moveToKitchen(scene, interactionManager);
     
     clickableTreadmill.addEventListener('click', treadmillState);
-    loungeEntrance.addEventListener('click', moveToloungeState);
+    clickableLoungeEntrance.addEventListener('click', moveToloungeState);
+    clickableKithcenEntrace.addEventListener('click', moveToKitchenState)
 
     return scene;
 }
@@ -63,9 +65,9 @@ function moveTolounge(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(3, 5.5, 3);
     const material = new THREE.MeshBasicMaterial({wireframe: true, color: "yellow"});
     const cube = new THREE.Mesh(geometry, material);
-    cube.position.x = -4;
+    cube.position.x = -3;
     cube.position.y = -1.4;
-    cube.position.z = 2;
+    cube.position.z = 3;
 
     scene.add(cube);
     interactionManager.add(cube);
@@ -76,6 +78,27 @@ function moveTolounge(scene, interactionManager) {
 function moveToloungeState() {
     if (checkTimeLine("house-0")) {
         changeRoom(loungeRoomFactory, 'lounge-room0');
+    }
+};
+
+function moveToKitchen(scene, interactionManager) {
+
+    const geometry = new THREE.BoxGeometry(3, 5.5, 3);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "pink"});
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = 4;
+    cube.position.y = -1.4;
+    cube.position.z = 4;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+
+};
+
+function moveToKitchenState() {
+    if (checkTimeLine("house-0")) {
+        changeRoom(kitchenRoomFactory, 'kitchen-room0');
     }
 };
 

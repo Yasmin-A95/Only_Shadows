@@ -27,6 +27,8 @@ export function loungeRoomFactory() {
     const clickableTreadmillDoor = treadmillRoomDoor(scene, interactionManager);
     const clickablePlant = plant(scene, interactionManager);
     const clickableFireplace = fireplace(scene, interactionManager);
+    const clickableCouch = couch(scene, interactionManager);
+    const clickablePalm = palm(scene, interactionManager);
 
 
     clickableRandomObj.addEventListener('click', randomObjectState);
@@ -35,6 +37,8 @@ export function loungeRoomFactory() {
     clickableTreadmillDoor.addEventListener('click', treadmillRoomDoorState);
     clickablePlant.addEventListener('click', plantState);
     clickableFireplace.addEventListener('click', fireplaceState);
+    clickableCouch.addEventListener('click', couchState);
+    clickablePalm.addEventListener('click', palmState);
 
     updateText("");
     return scene;
@@ -179,4 +183,38 @@ function fireplace(scene, interactionManager) {
 
 function fireplaceState() {
     updateText("probably best not to start fires these days")
+};
+
+function couch(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(1, 1, 2);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: 'purple' });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = 4.2;
+    cube.position.y = -1.9;
+    cube.position.z = -1.4;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function couchState() {
+    updateText('hmmm, covered in cat hair. sigh...')
+};
+
+function palm(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: 'yellow' });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = 3.2;
+    cube.position.y = -1.9;
+    cube.position.z = -3;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function palmState() {
+    updateText("These plants don't help with the mould...")
 };

@@ -205,7 +205,7 @@ function fireplace(scene, interactionManager) {
 };
 
 function fireplaceState() {
-    updateText("probably best not to start fires these days")
+    updateText("probably best not to start fires, Katie's been in a funky mood lately")
 };
 
 function couch(scene, interactionManager) {

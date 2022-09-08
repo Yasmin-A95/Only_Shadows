@@ -77,7 +77,6 @@ function scaryDoor(scene, interactionManager) {
 };
 
 function scaryDoorState() {
-    // TODO make it transport you to the boundless void
     updateText("I wonder what's through here?")
     setTimeout(changeRoom(cubeRoomFactory, 'cube-room0'), 1000)
 };

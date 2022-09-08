@@ -5,6 +5,10 @@ import bedRoomEnvironmentImage from '../../assets/images/bedroom0.jpg';
 import { addNoteToInventory, isNoteInInventory } from '../../state-management/inventory-state';
 import { updateText } from '../../dom/text-update';
 
+// diary Entry
+const diaryString = "I am writing this letter as I fear I may be stricken by a curse, a virulent malice that has clung for decades to my back. I likewise fear I cannot withstand much longer this scourge upon me. Though I have rifled through annals of esoteric histories and mysteries pertaining to my family, I have found no discernible origin for my affliction.No spurned witch lovers, accursed artefacts or insulted mystics crossed paths with my progenitors, as recorded or otherwise. As my bloodline runs clean and clear as the Blue Lagoon of Efate, I dread that this curse is uniquely my own... it cuts off there and it appears as though pages have been torn out."
+//
+
 // icons
 import objectIcon from '../../assets/icons/object-gem-icon.jpg';
 import noteicon from '../../assets/icons/note-icon.jpg';
@@ -12,7 +16,6 @@ import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
 
 // camera for debugging / dev
 
-import { getCamera } from '../../init';
 import { loungeRoomFactory } from './lounge-room0';
 import { checkTimeLine } from '../../state-management/timeline-state';
 import { changeRoom } from '../scene-manager';
@@ -26,10 +29,13 @@ export function bedRoomFactory() {
     const clickableDiary = diaryCube(scene, interactionManager);
     const clickableNote = bedroomVanityNote(scene, interactionManager);
     const clickableDoor = door(scene, interactionManager);
+    const clickableBed = bed(scene, interactionManager);
+    const clickableFan = fan(scene, interactionManager);
 
     clickableDiary.addEventListener('click', diaryState);
     clickableNote.addEventListener('click', bedroomVanityNoteState);
     clickableDoor.addEventListener('click', doorState);
+    clickableBed.addEventListener('click', bedState)
 
     const axesHelper = new THREE.AxesHelper(5);
     scene.add(axesHelper);
@@ -72,11 +78,12 @@ function diaryCube(scene, interactionManager) {
 };
 
 function diaryState() {
-    if (!isNoteInInventory("some more plotline will be found here")) {
-        addNoteToInventory("some more plotline will be found here", noteicon)
-        updateText("note reads: blah blah blah");
-    } else if (isNoteInInventory("some more plotline will be found here")) {
-        (isNoteInInventory("some more plotline will be found here"))
+    if (!isNoteInInventory(diaryString)) {
+        addNoteToInventory(diaryString, noteicon)
+        updateText("!");
+        updateText("Has Katie been reading my old journal? Where did she find this relic? Jesus, that's so embarrassing.");
+    } else if (isNoteInInventory(diaryString)) {
+        (isNoteInInventory(diaryString))
         updateText("note still reads: blah blah blah");
     };
 };
@@ -125,3 +132,36 @@ function doorState() {
         changeRoom(loungeRoomFactory, 'lounge-room0');
     }
 }
+
+function bed(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(3, 1, 10);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "blue" });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = 0.8;
+    cube.position.y = -3.1;
+    cube.position.z = -4.9;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function bedState() {
+    updateText("now's not the time...")
+};
+
+function fan(scene, interactionManager) {
+
+    const geometry = new THREE.BoxGeometry(0.8, 0.8, 0.8);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: 'yellow' });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = -1.7;
+    cube.position.y = -2.1;
+    cube.position.z = -3.7;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+
+
+};

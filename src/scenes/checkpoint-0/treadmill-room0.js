@@ -19,7 +19,7 @@ export function treadMillRoomFactory() {
     const clickableLoungeEntrance = moveTolounge(scene, interactionManager);
     const clickableKithcenEntrace = moveToKitchen(scene, interactionManager);
     const clickableLaundry = laundry(scene, interactionManager);
-    
+
     clickableTreadmill.addEventListener('click', treadmillState);
     clickableLoungeEntrance.addEventListener('click', moveToloungeState);
     clickableKithcenEntrace.addEventListener('click', moveToKitchenState);
@@ -46,8 +46,8 @@ function treadMillRoomEnvironmentSphere(scene, interactionManager) {
 };
 
 function treadmill(scene, interactionManager) {
-    const geometry = new THREE.BoxGeometry(2,0.5,1);
-    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "red"});
+    const geometry = new THREE.BoxGeometry(2, 0.5, 1);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "red" });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 3;
     cube.position.y = -3.5;
@@ -65,7 +65,7 @@ function treadmillState() {
 function moveTolounge(scene, interactionManager) {
 
     const geometry = new THREE.BoxGeometry(3, 5.5, 3);
-    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "yellow"});
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "yellow" });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = -3;
     cube.position.y = -1.4;
@@ -83,10 +83,12 @@ function moveToloungeState() {
     }
 };
 
+// TODO debug this - it timetravels you to the wrong place some of the time and you end up a checkpoint futher along
+
 function moveToKitchen(scene, interactionManager) {
 
     const geometry = new THREE.BoxGeometry(3, 5.5, 3);
-    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "pink"});
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "purple" });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = -4;
     cube.position.y = -1.4;
@@ -107,7 +109,7 @@ function moveToKitchenState() {
 
 function laundry(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(3, 5.5, 3);
-    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "pink"});
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "pink" });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 4;
     cube.position.y = -1.4;

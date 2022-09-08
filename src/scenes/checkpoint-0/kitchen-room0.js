@@ -11,9 +11,14 @@ export function kitchenRoomFactory() {
     const scene = new THREE.Scene();
     const interactionManager = getInteractionManager();
     bathRoomEnvironmentSphere(scene, interactionManager);
+    
     const clickablekitchenSink = kitchenSink(scene, interactionManager);
+    const clickableDoor = scaryDoor(scene, interactionManager);
+
     
     clickablekitchenSink.addEventListener('click', kitchenSinkState);
+    clickableDoor.addEventListener('click', scaryDoorState);
+    
 
     return scene;
 }
@@ -50,6 +55,23 @@ function kitchenSink(scene, interactionManager) {
 
 function kitchenSinkState() {
     updateText('hmmm, nah')
-    // TODO text auto closes after a minute
-    // TODO next scene
+};
+
+function scaryDoor(scene, interactionManager) {
+
+    const geometry = new THREE.BoxGeometry(3, 5.5, 3);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "yellow"});
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = -4;
+    cube.position.y = -1.4;
+    cube.position.z = 2;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function scaryDoorState() {
+    // TODO make it transport you to the boundless void
+    updateText("I wonder what's through here?")
 };

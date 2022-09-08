@@ -25,12 +25,14 @@ export function loungeRoomFactory() {
     const clickableRandomImage = randomImage(scene, interactionManager);
     const clickablehallwayDoor = hallwayDoor(scene, interactionManager);
     const clickableTreadmillDoor = treadmillRoomDoor(scene, interactionManager);
+    const clickablePlant = plant(scene, interactionManager);
 
 
     clickableRandomObj.addEventListener('click', randomObjectState);
     clickableRandomImage.addEventListener('click', randomImageState);
     clickablehallwayDoor.addEventListener('click', hallwayDoorState);
     clickableTreadmillDoor.addEventListener('click', treadmillRoomDoorState);
+    clickablePlant.addEventListener('click', plantState);
 
     updateText("");
     return scene;
@@ -141,4 +143,21 @@ function treadmillRoomDoorState() {
     if (checkTimeLine("house-0")) {
         changeRoom(treadMillRoomFactory, "treadmill-room0");
     }
+};
+
+function plant(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(1, 2.5, 1.2);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: 'red' });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = 4.5;
+    cube.position.y = -2.5;
+    cube.position.z = 1.4;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function plantState() {
+    updateText("Hmm, needs watering")
 };

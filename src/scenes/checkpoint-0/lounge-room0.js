@@ -29,6 +29,7 @@ export function loungeRoomFactory() {
     const clickableFireplace = fireplace(scene, interactionManager);
     const clickableCouch = couch(scene, interactionManager);
     const clickablePalm = palm(scene, interactionManager);
+    const clickableTv = tv(scene, interactionManager);
 
 
     clickableRandomObj.addEventListener('click', randomObjectState);
@@ -39,6 +40,7 @@ export function loungeRoomFactory() {
     clickableFireplace.addEventListener('click', fireplaceState);
     clickableCouch.addEventListener('click', couchState);
     clickablePalm.addEventListener('click', palmState);
+    clickableTv.addEventListener('click', tvState);
 
     updateText("");
     return scene;
@@ -217,4 +219,21 @@ function palm(scene, interactionManager) {
 
 function palmState() {
     updateText("These plants don't help with the mould...")
+};
+
+function tv(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(1, 2.8, 4);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: 'green' });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = -3.5;
+    cube.position.y = -1.9;
+    cube.position.z = 1.2;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function tvState() {
+    updateText("I'd better get my eyes checked")
 };

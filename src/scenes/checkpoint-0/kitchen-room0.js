@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { getInteractionManager } from "../../init";
 import kitchenEnvironmentImage from '../../assets/images/kitchen.jpg';
 import { updateText } from '../../dom/text-update';
+import { cubeRoomFactory } from './cube-room';
 
 // TODO connect this place to other places
 
@@ -92,6 +93,6 @@ function moveToTreadmillRoom(scene, interactionManager) {
 
 function moveToTreadmillRoomState() {
     // TODO make it lead somewhere
-    updateText("off i go")
-
+    updateText("off i go");
+    changeRoom(cubeRoomFactory, 'cube-room0');
 };

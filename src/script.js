@@ -30,7 +30,8 @@ const scenes = {
         'lounge-room0': loungeRoomFactory,
         'bath-room0': bathRoomFactory,
         'treadmill-room0': treadMillRoomFactory,
-        'kitchen-room0': kitchenRoomFactory
+        'kitchen-room0': kitchenRoomFactory,
+        'cube-room0': cubeRoomFactory
     },
     'house-1': {
         'bed-room1': bedRoom1Factory
@@ -41,9 +42,9 @@ const scenes = {
 }
 // calling get timeline gets me the correct position
 const position = getTimeline();
-//startGame(scenes[position.checkPoint][position.room]);
+startGame(scenes[position.checkPoint][position.room]);
 
-startGame(kitchenRoomFactory)
+//startGame(loungeRoomFactory)
 // TODO: make a main screen if time permits ..... lol
 
 // TODO: Loading screen

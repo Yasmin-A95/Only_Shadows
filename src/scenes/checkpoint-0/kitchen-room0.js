@@ -14,11 +14,12 @@ export function kitchenRoomFactory() {
     
     const clickablekitchenSink = kitchenSink(scene, interactionManager);
     const clickableDoor = scaryDoor(scene, interactionManager);
+    const archWayDoor = moveToTreadmillRoom(scene, interactionManager);
 
     
     clickablekitchenSink.addEventListener('click', kitchenSinkState);
     clickableDoor.addEventListener('click', scaryDoorState);
-    
+    archWayDoor.addEventListener('click', moveToTreadmillRoomState)    
 
     return scene;
 }
@@ -74,4 +75,23 @@ function scaryDoor(scene, interactionManager) {
 function scaryDoorState() {
     // TODO make it transport you to the boundless void
     updateText("I wonder what's through here?")
+};
+
+function moveToTreadmillRoom(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(3, 4, 3);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "blue"});
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = 2.5;
+    cube.position.y = -1.4;
+    cube.position.z = 4;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function moveToTreadmillRoomState() {
+    // TODO make it lead somewhere
+    updateText("off i go")
+
 };

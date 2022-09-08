@@ -18,10 +18,12 @@ export function treadMillRoomFactory() {
     const clickableTreadmill = treadmill(scene, interactionManager);
     const clickableLoungeEntrance = moveTolounge(scene, interactionManager);
     const clickableKithcenEntrace = moveToKitchen(scene, interactionManager);
+    const clickableLaundry = laundry(scene, interactionManager);
     
     clickableTreadmill.addEventListener('click', treadmillState);
     clickableLoungeEntrance.addEventListener('click', moveToloungeState);
-    clickableKithcenEntrace.addEventListener('click', moveToKitchenState)
+    clickableKithcenEntrace.addEventListener('click', moveToKitchenState);
+    clickableLaundry.addEventListener('click', laundryState);
 
     return scene;
 }
@@ -102,6 +104,23 @@ function moveToKitchenState() {
     }
 };
 
+
+function laundry(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(3, 5.5, 3);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "pink"});
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = 4;
+    cube.position.y = -1.4;
+    cube.position.z = 4;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function laundryState() {
+    updateText("nah, I don't feel like doing laundry right now")
+};
 
 // function scaryDoor(scene, interactionManager) {
 

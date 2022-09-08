@@ -35,7 +35,8 @@ export function bedRoomFactory() {
     clickableDiary.addEventListener('click', diaryState);
     clickableNote.addEventListener('click', bedroomVanityNoteState);
     clickableDoor.addEventListener('click', doorState);
-    clickableBed.addEventListener('click', bedState)
+    clickableBed.addEventListener('click', bedState);
+    clickableFan.addEventListener('click', fanState);
 
     const axesHelper = new THREE.AxesHelper(5);
     scene.add(axesHelper);
@@ -152,16 +153,19 @@ function bedState() {
 
 function fan(scene, interactionManager) {
 
-    const geometry = new THREE.BoxGeometry(0.8, 0.8, 0.8);
+    const geometry = new THREE.BoxGeometry(1.3, 0.8, 0.8);
     const material = new THREE.MeshBasicMaterial({ wireframe: true, color: 'yellow' });
     const cube = new THREE.Mesh(geometry, material);
-    cube.position.x = -1.7;
+    cube.position.x = -1;
     cube.position.y = -2.1;
-    cube.position.z = -3.7;
+    cube.position.z = -4.5;
 
     scene.add(cube);
     interactionManager.add(cube);
     return cube;
 
+};
 
+function fanState() {
+    updateText('* fan noises *')
 };

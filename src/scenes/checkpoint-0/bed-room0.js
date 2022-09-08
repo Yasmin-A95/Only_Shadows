@@ -38,6 +38,7 @@ export function bedRoomFactory() {
     clickableDoor.addEventListener('click', doorState);
     clickableBed.addEventListener('click', bedState);
     clickableFan.addEventListener('click', fanState);
+    clickableLaundry.addEventListener('click', laundryState);
 
     const axesHelper = new THREE.AxesHelper(5);
     scene.add(axesHelper);
@@ -182,4 +183,8 @@ function laundry(scene, interactionManager) {
     scene.add(cube);
     interactionManager.add(cube);
     return cube;
+};
+
+function laundryState() {
+    updateText("Hmmm, Katie hasn't done much washing lately... I'll try and get to it later")
 };

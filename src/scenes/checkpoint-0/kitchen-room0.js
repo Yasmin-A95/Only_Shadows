@@ -5,6 +5,7 @@ import { updateText } from '../../dom/text-update';
 import { cubeRoomFactory } from './cube-room';
 import { changeRoom } from '../scene-manager';
 import { treadMillRoomFactory } from './treadmill-room0';
+import { checkTimeLine } from '../../state-management/timeline-state';
 
 // TODO connect this place to other places
 

@@ -22,6 +22,7 @@ export function loungeRoomFactory() {
     loungeRoomSphere(scene, interactionManager);
 
     const clickableRandomObj = randomObject(scene, interactionManager);
+    const clickableAnotherRandomTrolleyThing = anotherRandomTrolleyThing(scene, interactionManager);
     const clickableRandomImage = randomImage(scene, interactionManager);
     const clickablehallwayDoor = hallwayDoor(scene, interactionManager);
     const clickableTreadmillDoor = treadmillRoomDoor(scene, interactionManager);
@@ -42,6 +43,8 @@ export function loungeRoomFactory() {
     clickablePalm.addEventListener('click', palmState);
     clickableTv.addEventListener('click', tvState);
     clickableCoffeeTable.addEventListener('click', coffeeTableState);
+    clickableAnotherRandomTrolleyThing.addEventListener('click', anotherRandomTrolleyThingState);
+    
 
     updateText("");
     return scene;
@@ -80,6 +83,23 @@ function randomObject(scene, interactionManager) {
     interactionManager.add(cube);
     return cube;
 
+};
+
+function anotherRandomTrolleyThing(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: 'red' });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = 2.6;
+    cube.position.y = -2.5;
+    cube.position.z = 3.2;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function anotherRandomTrolleyThingState() {
+    updateText("so much random garbage, so little space")
 };
 
 function randomObjectState() {
@@ -236,7 +256,7 @@ function tv(scene, interactionManager) {
 };
 
 function tvState() {
-    updateText("I'd better get my eyes checked")
+    updateText("I'd better get my eyes checked, too much tv has everything looking pretty warped")
 };
 
 function coffeeTable(scene, interactionManager) {

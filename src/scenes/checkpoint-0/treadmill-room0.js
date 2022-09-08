@@ -2,6 +2,10 @@ import * as THREE from 'three';
 import { getInteractionManager } from "../../init";
 import treadMillEnvironmentImage from '../../assets/images/treadmillroom.jpg';
 import { updateText } from '../../dom/text-update';
+import { changeRoom } from '../scene-manager';
+import { checkTimeLine } from '../../state-management/timeline-state';
+import { kitchenRoomFactory } from './kitchen-room0';
+import { loungeRoomFactory } from './lounge-room0';
 
 // TODO connect this place to other places
 
@@ -10,15 +14,17 @@ export function treadMillRoomFactory() {
 
     const scene = new THREE.Scene();
     const interactionManager = getInteractionManager();
-    bathRoomEnvironmentSphere(scene, interactionManager);
+    treadMillRoomEnvironmentSphere(scene, interactionManager);
     const clickableTreadmill = treadmill(scene, interactionManager);
+    const loungeEntrance = moveTolounge(scene, interactionManager);
     
     clickableTreadmill.addEventListener('click', treadmillState);
+    loungeEntrance.addEventListener('click', moveToloungeState);
 
     return scene;
 }
 
-function bathRoomEnvironmentSphere(scene, interactionManager) {
+function treadMillRoomEnvironmentSphere(scene, interactionManager) {
     const geometry = new THREE.SphereGeometry(5, 32, 16);
     const material = new THREE.MeshBasicMaterial({
         map: new THREE.TextureLoader().load(treadMillEnvironmentImage)
@@ -50,6 +56,45 @@ function treadmill(scene, interactionManager) {
 
 function treadmillState() {
     updateText('hmmm, nah')
-    // TODO text auto closes after a minute
-    // TODO next scene
 };
+
+function moveTolounge(scene, interactionManager) {
+
+    const geometry = new THREE.BoxGeometry(3, 5.5, 3);
+    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "yellow"});
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = -4;
+    cube.position.y = -1.4;
+    cube.position.z = 2;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+
+};
+
+function moveToloungeState() {
+    if (checkTimeLine("house-0")) {
+        changeRoom(loungeRoomFactory, 'lounge-room0');
+    }
+};
+
+
+// function scaryDoor(scene, interactionManager) {
+
+    // const geometry = new THREE.BoxGeometry(3, 5.5, 3);
+    // const material = new THREE.MeshBasicMaterial({wireframe: true, color: "yellow"});
+    // const cube = new THREE.Mesh(geometry, material);
+    // cube.position.x = -4;
+    // cube.position.y = -1.4;
+    // cube.position.z = 2;
+
+    // scene.add(cube);
+    // interactionManager.add(cube);
+    // return cube;
+// };
+
+// function scaryDoorState() {
+//     // TODO make it transport you to the boundless void
+//     updateText("I wonder what's through here?")
+//};

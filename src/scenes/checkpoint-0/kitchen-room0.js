@@ -3,6 +3,8 @@ import { getInteractionManager } from "../../init";
 import kitchenEnvironmentImage from '../../assets/images/kitchen.jpg';
 import { updateText } from '../../dom/text-update';
 import { cubeRoomFactory } from './cube-room';
+import { changeRoom } from '../scene-manager';
+import { treadMillRoomFactory } from './treadmill-room0';
 
 // TODO connect this place to other places
 
@@ -76,6 +78,7 @@ function scaryDoor(scene, interactionManager) {
 function scaryDoorState() {
     // TODO make it transport you to the boundless void
     updateText("I wonder what's through here?")
+    setTimeout(changeRoom(cubeRoomFactory, 'cube-room0'), 1000)
 };
 
 function moveToTreadmillRoom(scene, interactionManager) {
@@ -92,7 +95,7 @@ function moveToTreadmillRoom(scene, interactionManager) {
 };
 
 function moveToTreadmillRoomState() {
-    // TODO make it lead somewhere
-    updateText("off i go");
-    changeRoom(cubeRoomFactory, 'cube-room0');
+    if (checkTimeLine("house-0")) {
+        changeRoom(treadMillRoomFactory, 'treadmill-room0');
+    }
 };

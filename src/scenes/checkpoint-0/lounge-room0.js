@@ -26,6 +26,7 @@ export function loungeRoomFactory() {
     const clickablehallwayDoor = hallwayDoor(scene, interactionManager);
     const clickableTreadmillDoor = treadmillRoomDoor(scene, interactionManager);
     const clickablePlant = plant(scene, interactionManager);
+    const clickableFireplace = fireplace(scene, interactionManager);
 
 
     clickableRandomObj.addEventListener('click', randomObjectState);
@@ -33,6 +34,7 @@ export function loungeRoomFactory() {
     clickablehallwayDoor.addEventListener('click', hallwayDoorState);
     clickableTreadmillDoor.addEventListener('click', treadmillRoomDoorState);
     clickablePlant.addEventListener('click', plantState);
+    clickableFireplace.addEventListener('click', fireplaceState);
 
     updateText("");
     return scene;
@@ -160,4 +162,21 @@ function plant(scene, interactionManager) {
 
 function plantState() {
     updateText("Hmm, needs watering")
+};
+
+function fireplace(scene, interactionManager) {
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: 'blue' });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.position.x = 4.5;
+    cube.position.y = -1.9;
+    cube.position.z = 0.2;
+
+    scene.add(cube);
+    interactionManager.add(cube);
+    return cube;
+};
+
+function fireplaceState() {
+    updateText("probably best not to start fires these days")
 };

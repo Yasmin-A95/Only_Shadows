@@ -86,9 +86,9 @@ function moveToKitchen(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(3, 5.5, 3);
     const material = new THREE.MeshBasicMaterial({wireframe: true, color: "pink"});
     const cube = new THREE.Mesh(geometry, material);
-    cube.position.x = 4;
+    cube.position.x = -4;
     cube.position.y = -1.4;
-    cube.position.z = 4;
+    cube.position.z = -4;
 
     scene.add(cube);
     interactionManager.add(cube);

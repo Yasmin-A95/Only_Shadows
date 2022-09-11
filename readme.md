@@ -8,7 +8,7 @@ This [miro board](https://miro.com/app/board/uXjVPap0qME=/?share_link_id=2409770
 - Stylistically, the images are manipulated and distorted using an algorithm I made.
 
 ## Play It
-The deployed version can be played [here](https://immersive-bubble.vercel.app/). **note the WASD controls**. This version was a test site for proof of concept, namely working through the following: 
+The deployed version can be played [here](https://immersive-bubble.vercel.app/). **Note the WASD controls**. This version was a test site for proof of concept, namely working through the following: 
 1. Creating 3D environments made out of images that a player can explore.
 2. Creating objects within the environment that a player could interact with. 
 3. Testing text toggling based on interactions with the environment. 

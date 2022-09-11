@@ -4,7 +4,7 @@ A point-and-click adventure game based on a short story a friend of mine wrote -
 
 This [miro board](https://miro.com/app/board/uXjVPap0qME=/?share_link_id=24097702245) fleshes out the details, but here's a brief summary.
 - A point-and-click adventure game made using Three.js in an environment made out of 3d 'bubble images' with cut scenes made from flat images stitched together. 
-- I achieved this by using the bubble image camera built into google's street view app.  
+- I achieved this by using the bubble camera built into google's street view app.  
 - Stylistically, the images are manipulated and distorted using an algorithm I made.
 
 ## Play It

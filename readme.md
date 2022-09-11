@@ -16,9 +16,8 @@ The deployed version can be played [here](https://immersive-bubble.vercel.app/).
 5. Timelines and checkpoints to ensure that the environment can 'permanently' change. 
 
 Coming soon: the current codebase pushed through to deployment. I'm currently working through some bugs that pop up when I try to bridge the 'cut scene' part of the game to the free-roaming part. These are the two distinct types of gameplay. The free roam gameplay has the player moving through a 3D bubble image environment. The player interacts with objects, explores the scene to achieve objectives and finds clues that help drive the narrative. The parts that act more like a cut-scene are made from flat images. In that type of game play the player is forced to go forward or do nothing, this is where the most dense storytelling will occur. 
-## The Process: 
 
-## Setup
+## Setup Locally 
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
 
@@ -33,9 +32,11 @@ npm run dev
 npm run build
 ```
 
-## Development loop
+## The Process
 
-### Creating a new scene
+### Development loop
+
+#### Creating a new scene
 
 1. Add a new scene file to `src/scenes`
 2. Create a scene factory function in that file (e.g. `function bathroomFactory`)
@@ -44,25 +45,25 @@ npm run build
     3. Then return that scene
     4. When you need to move between rooms or checkpoints you need to load the new scene in the file that has the click handler
 
-### Inventory
+#### Inventory
 
 1. Have an object in a scene
 2. Add a click handler to it
 3. From that handler call `addNoteToInventory`, `addImageToInventory`, or `addObjectToInventory` with the thing you want to add
 
-### Navigating between rooms
+#### Navigating between rooms
 
 1. Have an object in the scene that will be the activation thing for the moving
 2. Add a click handler to it
 3. Call `changeRoom` with the scene factory to use and the name of the room to save in the state
 
-### Navigating between checkpoints
+#### Navigating between checkpoints
 
 1. Have an object in the scene that will be the activation thing for the moving
 2. Add a click handler to it
 3. Call `changeCheckpoint` with the scene factory to use and the name of the checkpoint to save in the state
 
-### Working out when to do things based on the current game state
+#### Working out when to do things based on the current game state
 
 Use things like `getState`, `getTimeline`, or `getInventory` to make decision in your click handlers or get data to display.
 

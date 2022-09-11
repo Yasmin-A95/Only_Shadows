@@ -7,7 +7,7 @@ This [miro board](https://miro.com/app/board/uXjVPap0qME=/?share_link_id=2409770
 - I achieved this by using the bubble image camera built into google's street view app.  
 - Stylistically, the images are manipulated and distorted using an algorithm I made.
 
-## Play It: 
+## Play It
 The deployed version can be played [here](https://immersive-bubble.vercel.app/). This version was a test site for proof of concept, namely working through the following: 
 1. Creating 3d environments made out of images.
 2. Creating objects within the environment that a player could interact with. 

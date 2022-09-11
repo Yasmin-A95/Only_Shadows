@@ -1,19 +1,21 @@
 # Only Shadows
 
-A point and click adventure game based on a short story a friend of mine wrote - cooincidentally during the process of making the game I found out it's due to be published about a month from now!  
+A point-and-click adventure game based on a short story a friend of mine wrote - coincidentally, during the process of making the game I found out it's due to be published about a month from now!  
 
-This [miro board](https://miro.com/app/board/uXjVPap0qME=/?share_link_id=24097702245) fleshes out the details. 
+This [miro board](https://miro.com/app/board/uXjVPap0qME=/?share_link_id=24097702245) fleshes out the details, but here's a brief summary.
+- A point-and-click adventure game made using Three.js in an environment made out of 3d 'bubble images' with cut scenes made from flat images stitched together. 
+- I achieved this by using the bubble image camera built into google's street view app.  
+- Stylistically, the images are manipulated and distorted using an algorithm I made.
 
 ## Play It: 
 The deployed version can be played [here](https://immersive-bubble.vercel.app/). This version was a test site for proof of concept, namely working through the following: 
-1. That I was able to create 3d environments made out of images.
-2. That I could create objects within the environment that a player could interact with. 
+1. Creating 3d environments made out of images.
+2. Creating objects within the environment that a player could interact with. 
 3. Testing text toggling based on interactions with the environment. 
-4. Inventory being stored.
-5. Timelines and checkpoints ensuring that the environment can 'permanantly' change. 
+4. Inventory data storage.
+5. Timelines and checkpoints to ensure that the environment can 'permanently' change. 
 
-Coming soon: the current codebase pushed through to deployment. I'm currently working through some bugs that pop up when I try to bridge the 'cut scene' part of the game to the free roaming part. The parts of the game where the player has the most control are the parts where you move through the 3D bubble image environment and find clues which tell the story and complete objectives. Whereas the parts which are more like a cut scene are made using flat images stitched together, and the player is forced to either go forward or do nothing. This is where I intend for the most dense storytelling to take place. 
-
+Coming soon: the current codebase pushed through to deployment. I'm currently working through some bugs that pop up when I try to bridge the 'cut scene' part of the game to the free-roaming part. These are the two distinct types of gameplay. The free roam gameplay has the player moving through a 3D bubble image environment. The player interacts with objects, explores the scene to achieve objectives and finds clues that help drive the narrative. The parts that act more like a cut-scene are made from flat images. In that type of game play the player is forced to go forward or do nothing, this is where the most dense storytelling will occur. 
 ## The Process: 
 
 ## Setup

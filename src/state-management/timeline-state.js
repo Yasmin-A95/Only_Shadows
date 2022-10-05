@@ -11,7 +11,6 @@ export function checkTimeLine(isCheckPoint) {
         return false;
     };
 };
-let timeline = getTimeline();
 
 export function advancePlot(checkPoint) { 
     const currentTimeline = getTimeline();
@@ -26,6 +25,6 @@ export function loadRoom(roomName) {
     autoSavetext();
 };
 
-export function saveTimeline(timelinePosition) { // TODO trigger autosave css shit
+export function saveTimeline(timelinePosition) {
     localStorage.setItem('timeline', JSON.stringify(timelinePosition))
 };

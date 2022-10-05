@@ -14,9 +14,30 @@ import { artRoom1Factory } from '../checkpoint-1/art-room1';
 import { bedRoom1Factory } from '../checkpoint-1/bed-room1';
 import { treadMillRoomFactory } from './treadmill-room0';
 
+game = {
+    rooms: {
+        lounge: {
+            texture: "",
+            effect: "",
+            exits: [
+                {
+                    id: "hallway-door",
+                    exitTo: "hallway"
+                },
+            ],
+            objects: [
+               {
+                x,y,z:
+                name:  "plant",
+                text: ""
+               } 
+            ]
+        }
+
+    }
+}
 
 export function loungeRoomFactory() {
-
     const scene = new THREE.Scene();
     const interactionManager = getInteractionManager();
     loungeRoomSphere(scene, interactionManager);
@@ -46,7 +67,7 @@ export function loungeRoomFactory() {
     clickableAnotherRandomTrolleyThing.addEventListener('click', anotherRandomTrolleyThingState);
     
 
-    updateText("");
+    updateText("Kaaaaatie")
     return scene;
 };
 
@@ -261,7 +282,7 @@ function tvState() {
 
 function coffeeTable(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(0.5, 1, 2);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: 'yellow' });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.1 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 3;
     cube.position.y = -3.5;

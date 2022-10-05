@@ -47,7 +47,7 @@ function bathRoomEnvironmentSphere(scene, interactionManager) {
 
 function kitchenSink(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(5,0.5,1);
-    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "red"});
+    const material = new THREE.MeshBasicMaterial({wireframe: true, opacity: 0.2});
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 1.5;
     cube.position.y = -3;
@@ -65,7 +65,7 @@ function kitchenSinkState() {
 function scaryDoor(scene, interactionManager) {
 
     const geometry = new THREE.BoxGeometry(3, 5.5, 3);
-    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "yellow"});
+    const material = new THREE.MeshBasicMaterial({wireframe: true, opacity: 0.2});
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = -4;
     cube.position.y = -1.4;
@@ -83,7 +83,7 @@ function scaryDoorState() {
 
 function moveToTreadmillRoom(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(3, 4, 3);
-    const material = new THREE.MeshBasicMaterial({wireframe: true, color: "blue"});
+    const material = new THREE.MeshBasicMaterial({wireframe: true, opacity: 0.2});
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 2.5;
     cube.position.y = -1.4;

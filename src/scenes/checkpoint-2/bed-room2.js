@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import spookyBedRoomEnvironmentImage from '../../assets/images/bedroom2trippy.jpg';
-import { updateText } from '../../dom/text-update';
+import { updateObjective, updateText } from '../../dom/text-update';
 import { getInteractionManager } from '../../init';
 import { checkTimeLine } from '../../state-management/timeline-state';
 
@@ -14,6 +14,7 @@ export function bedRoom2Factory() {
     cliclableMicaela.addEventListener('click', micaelaState);
 
     //TODO- clicking bed redirects to next scene
+    updateObjective("");
     updateText("scary stuff");
     return scene;
 };
@@ -36,7 +37,7 @@ function bedRoomSphere(scene, interactionManager) {
 
 function micaela(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(0.6, 4, 0.2);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: 'red' });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = -0.2;
     cube.position.y = -1.5;
@@ -48,7 +49,7 @@ function micaela(scene, interactionManager) {
 };
 
 function micaelaState() {
-    // if(checkTimeLine("house-2")){
-        updateText("something spooky probably I'll get to this later if not lol hi classmates be concerned about my wellbeing I bet Im not ok (joke)(this is not a joke)")
-   // };
+    if(checkTimeLine("house-2")){
+    updateText("something spooky probably I'll get to this later if not lol hi classmates be concerned about my wellbeing I bet Im not ok (joke)(this is not a joke)")
+    };
 };

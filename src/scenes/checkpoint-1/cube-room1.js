@@ -78,7 +78,7 @@ function evilCube(scene, interactionManager) {
 
 function randomObj(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(0.6, 0.6, 0.6);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "yellow" });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 3;
     cube.position.y = -2;
@@ -91,7 +91,7 @@ function randomObj(scene, interactionManager) {
 
 function randomNote(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "pink" });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 2.7;
     cube.position.y = -2;
@@ -104,7 +104,7 @@ function randomNote(scene, interactionManager) {
 
 function randomImg(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(0.4, 0.4, 0.4);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "blue" });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 1.4;
     cube.position.y = -2;

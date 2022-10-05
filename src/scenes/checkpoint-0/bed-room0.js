@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { getInteractionManager } from "../../init";
 import bedRoomEnvironmentImage from '../../assets/images/bedroom0.jpg';
 import { addNoteToInventory, isNoteInInventory } from '../../state-management/inventory-state';
-import { updateText } from '../../dom/text-update';
+import { updateObjective, updateText } from '../../dom/text-update';
 
 // diary Entry
 const diaryString = "I am writing this letter as I fear I may be stricken by a curse, a virulent malice that has clung for decades to my back. I likewise fear I cannot withstand much longer this scourge upon me. Though I have rifled through annals of esoteric histories and mysteries pertaining to my family, I have found no discernible origin for my affliction.No spurned witch lovers, accursed artefacts or insulted mystics crossed paths with my progenitors, as recorded or otherwise. As my bloodline runs clean and clear as the Blue Lagoon of Efate, I dread that this curse is uniquely my own... it cuts off there and it appears as though pages have been torn out."
@@ -42,8 +42,8 @@ export function bedRoomFactory() {
 
     const axesHelper = new THREE.AxesHelper(5);
     scene.add(axesHelper);
-    // const camera = getCamera();
-    // camera.lookAt(clickableNote.position); ??? why
+    updateObjective('Objective: Find Katie')
+    updateText("Katie? ... You home? ... ")
     return scene;
 };
 

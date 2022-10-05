@@ -19,7 +19,6 @@ export function loadGame() {
 export function detectNewGame() {
     return !getTimeline();
 };
-
 export function initNewGameState() {
     saveTimeline({
         checkPoint: "house-0",

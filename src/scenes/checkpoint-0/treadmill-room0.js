@@ -49,7 +49,7 @@ function treadMillRoomEnvironmentSphere(scene, interactionManager) {
 
 function treadmill(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(2, 0.5, 1);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "red" });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2});
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 3;
     cube.position.y = -3.5;
@@ -67,7 +67,7 @@ function treadmillState() {
 function moveTolounge(scene, interactionManager) {
 
     const geometry = new THREE.BoxGeometry(3, 5.5, 3);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "yellow" });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = -3;
     cube.position.y = -1.4;
@@ -90,7 +90,7 @@ function moveToloungeState() {
 function moveToKitchen(scene, interactionManager) {
 
     const geometry = new THREE.BoxGeometry(3, 5.5, 3);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "purple" });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = -4;
     cube.position.y = -1.4;
@@ -111,7 +111,7 @@ function moveToKitchenState() {
 
 function laundry(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(3, 5.5, 3);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "pink" });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 4;
     cube.position.y = -1.4;
@@ -128,7 +128,7 @@ function laundryState() {
 
 function potteryWheel(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(1, 1.5, 1);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "green" });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = -3;
     cube.position.y = -3.5;

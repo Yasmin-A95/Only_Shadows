@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #text-display {
+    font-family: 'Press Start 2P', cursive;
     font-size: 2vw;
     position: fixed;
     bottom: 2%;
@@ -20,6 +24,20 @@
     border: 1px solid white;
 }
 
+/* .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: text 3.5s steps(28, end), blink-caret .75s step-end infinite,
+    blinkTextCursor 500ms steps(2) normal;
+    border-right: .15em solid; 
+}
+
+@keyframes text {
+    from { width: 0}
+    to { width: 100%} 
+} */
+
 .hidden {
     display: none;
 }
@@ -31,20 +49,22 @@
     position: fixed;
     right: 0;
     left: 0;
-    border: 1px solid black;
-    height: 2rem;
-    min-width: 100%
+    min-width: 100%;
 }
 
 #inventory-display {
     display: flex;
-    background-color: purple;
     min-height: 2rem;
-    min-width: 100%
+    min-width: 100%;
 }
 
 #restart-button {
-    background-color: pink;
+    font-family: 'Press Start 2P', cursive;
+    margin: 1rem;
+    background-color: white;
+    border: 2px solid black;
+    padding: 0.5rem 0.75rem;
+    border-radius: 3px;
 }
 
 .icon {
@@ -52,14 +72,25 @@
 }
 
 #autosave {
+    font-family: 'Press Start 2P', cursive;
     top: 0;
     right: 0;
+    padding: 0.5rem 0.75rem;
     position: absolute;
     background-color: lime;
     /* transform: scale(0, 0);
     transition: transform 0.3s; the css doesn't like this for some reason.
     bleh 
     TODO work out why */
+}
+
+#objective {
+    font-size: 2vw;
+    top: 3rem;
+    right: 2rem;
+    position: fixed;
+    color: white;
+    text-align: right;
 }
 
 /*

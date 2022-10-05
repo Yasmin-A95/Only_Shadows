@@ -1,6 +1,4 @@
-# Three.js Journey
-
-## Setup
+# Setup
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
 
@@ -77,3 +75,33 @@ It looks like this:
     }
 }
 ```
+
+DATA DRIVEN! 
+
+//TODO: make game state look something like this
+
+game = {
+    rooms: {
+        lounge: {
+            texture: "",
+            effect: "",
+            exits: [
+                {
+                    id: "hallway-door",
+                    exitTo: "hallway"
+                },
+            ],
+            objects: [
+               {
+                x,y,z:
+                name:  "plant",
+                text: ""
+               } 
+            ]
+        }
+
+    }
+}
+
+//TODO: extract ^ objs into functions
+

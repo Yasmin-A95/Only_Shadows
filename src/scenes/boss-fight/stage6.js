@@ -34,7 +34,7 @@ function bossFightEnvironmentSphere(scene, interactionManager) {
 
 function boss(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(0.1, 3, 2);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: "red" });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 3.5;
     cube.position.y = -2;

@@ -1,5 +1,7 @@
 const textDiv = document.getElementById('text-display');
 
+let textDisplayTimeoutId;
+
 export function hideText() {
     textDiv.classList.add('hidden');
 };
@@ -20,8 +22,13 @@ export function updateText(str) {
 
     clearText();
     replaceText(str);
+
+    if (textDisplayTimeoutId) {
+        clearTimeout(textDisplayTimeoutId)
+    }
+
     // and have it go away after a sec
-    setTimeout(clearText, 3500)
+    textDisplayTimeoutId = setTimeout(clearText, 3500)
 };
 
 export function autoSavetext() {
@@ -32,4 +39,9 @@ export function autoSavetext() {
     function clearAutoSaveText() {
         autoSaveText.innerText = "";
     };
+};
+
+export function updateObjective(string) {
+    const objectiveText = document.getElementById('objective');
+    objectiveText.innerText = string;
 };

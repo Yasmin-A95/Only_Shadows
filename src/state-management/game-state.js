@@ -27,3 +27,5 @@ export function initNewGameState() {
 
     saveInventory([]);
 };
+
+

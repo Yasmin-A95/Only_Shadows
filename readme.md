@@ -103,5 +103,29 @@ game = {
     }
 }
 
+game = {
+    checkpoints: {
+        checkpoint-0: {
+            rooms: {
+                bedroom: {
+                    changeRoomObjects: [
+                        {
+                            id: "bedroom-door",
+                            exitTo: "hallway",
+                            xyz:
+                        }
+                    ],
+                    updateTextObjects: [
+
+                    ],
+                    inventoryObjects: [
+
+                    ]
+                }
+            }
+        }
+    }
+}
+
 //TODO: extract ^ objs into functions
 

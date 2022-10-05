@@ -75,8 +75,9 @@ It looks like this:
     }
 }
 ```
+## Game State take Two
 
-DATA DRIVEN! 
+### For ~DATA DRIVEN~ re Josh's Suggestions! 
 
 //TODO: make game state look something like this
 
@@ -107,7 +108,6 @@ game = {
                                 color: "yellow"
 
                             }
-
                         ],
                         inventoryObjects: [
                             {
@@ -130,5 +130,4 @@ game = {
     }
 }
 
-//TODO: extract ^ objs into functions
-
+// TODO: make a function that can read said state and test it out 

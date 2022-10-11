@@ -104,7 +104,7 @@ function bedroomVanityNote(scene, interactionManager) {
 
 function bedroomVanityNoteState() {
     if (!isNoteInInventory("plotline will be found here")) {
-        addNoteToInventory("plotline will be found here", noteicon)
+        addNoteToInventory("plotline will be found here")
         updateText("note reads: death is imminent");
     } else if (isNoteInInventory("plotline will be found here")) {
         console.log(isNoteInInventory("plotline will be found here"))

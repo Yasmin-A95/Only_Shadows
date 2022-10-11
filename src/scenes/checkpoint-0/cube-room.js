@@ -1,14 +1,11 @@
 import * as THREE from 'three';
 import { updateText } from '../../dom/text-update';
 import { getInteractionManager } from '../../init';
-import { changeCheckpoint } from '../scene-manager';
-import { artRoom1Factory } from '../checkpoint-1/art-room1';
 import { addImageToInventory, addNoteToInventory, addObjectToInventory, isImageInInventory, isNoteInInventory, isObjectInInventory } from '../../state-management/inventory-state';
 import { checkTimeLine } from '../../state-management/timeline-state';
 
 // icons
 
-import obteicon from '../../assets/icons/note-icon.jpg';
 import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
 
 export function cubeRoomFactory() {

@@ -9,8 +9,6 @@ import { updateObjective, updateText } from '../../dom/text-update';
 const diaryString = "I am writing this letter as I fear I may be stricken by a curse, a virulent malice that has clung for decades to my back. I likewise fear I cannot withstand much longer this scourge upon me. Though I have rifled through annals of esoteric histories and mysteries pertaining to my family, I have found no discernible origin for my affliction.No spurned witch lovers, accursed artefacts or insulted mystics crossed paths with my progenitors, as recorded or otherwise. As my bloodline runs clean and clear as the Blue Lagoon of Efate, I dread that this curse is uniquely my own... it cuts off there and it appears as though pages have been torn out."
 //
 
-// icons
-import noteIcon from '../../assets/icons/note-icon.jpg';
 
 // camera for debugging / dev
 
@@ -80,7 +78,7 @@ function diaryCube(scene, interactionManager) {
 
 function diaryState() {
     if (!isNoteInInventory(diaryString)) {
-        addNoteToInventory(diaryString, noteIcon)
+        addNoteToInventory(diaryString)
         updateText("!");
         updateText("Has Katie been reading my old journal? Where did she find this relic? Jesus, that's so embarrassing.");
     } else if (isNoteInInventory(diaryString)) {

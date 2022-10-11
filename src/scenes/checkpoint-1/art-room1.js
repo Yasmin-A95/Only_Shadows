@@ -10,7 +10,6 @@ import { checkTimeLine } from '../../state-management/timeline-state';
 
 // icons
 import objectIcon from '../../assets/icons/object-gem-icon.jpg';
-import noteIcon from '../../assets/icons/note-icon.jpg';
 import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
 
 export function artRoom1Factory() {
@@ -48,7 +47,7 @@ export function artRoom1Factory() {
     ipadNote.addEventListener('click', function (e) {
         if (checkTimeLine("house-1")) {
             if (!isNoteInInventory('you clicked the ipad girl, good job')) {
-                addNoteToInventory('you clicked the ipad girl, good job', noteIcon);
+                addNoteToInventory('you clicked the ipad girl, good job');
                 updateText("note reads: you clicked the ipad girl, good job");
             } else if (isNoteInInventory) {
                 updateText("we've already done this");

@@ -9,7 +9,6 @@ import { updateText } from '../../dom/text-update';
 
 // icons
 import objectIcon from '../../assets/icons/object-gem-icon.jpg';
-import noteIcon from '../../assets/icons/note-icon.jpg';
 import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
 
 export function artRoomFactory() {
@@ -44,7 +43,7 @@ export function artRoomFactory() {
     ipadNote.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
             if (!isNoteInInventory('you clicked the ipad girl, good job')) {
-                addNoteToInventory('you clicked the ipad girl, good job', noteIcon);
+                addNoteToInventory('you clicked the ipad girl, good job');
                 updateText("note reads: you clicked the ipad girl, good job");
             } else if (isNoteInInventory) {
                 updateText("as i said .... note reads: you clicked the ipad girl, good job");

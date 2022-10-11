@@ -8,8 +8,7 @@ import { checkTimeLine } from '../../state-management/timeline-state';
 
 // icons
 
-import objectIcon from '../../assets/icons/object-gem-icon.jpg';
-import noteicon from '../../assets/icons/note-icon.jpg';
+import obteicon from '../../assets/icons/note-icon.jpg';
 import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
 
 export function cubeRoomFactory() {
@@ -40,7 +39,7 @@ export function cubeRoomFactory() {
     clickableRandomNote.addEventListener('click', function (e) {
         if (checkTimeLine("house-0")) {
             if (!isNoteInInventory("words")) {
-                addNoteToInventory("words", noteicon)
+                addNoteToInventory("words")
                 updateText("note reads: death is imminent");
             } else if (isNoteInInventory) {
                 updateText("note still reads: death is imminent");

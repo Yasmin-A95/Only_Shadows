@@ -10,9 +10,7 @@ const diaryString = "I am writing this letter as I fear I may be stricken by a c
 //
 
 // icons
-import objectIcon from '../../assets/icons/object-gem-icon.jpg';
-import noteicon from '../../assets/icons/note-icon.jpg';
-import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
+import noteIcon from '../../assets/icons/note-icon.jpg';
 
 // camera for debugging / dev
 
@@ -82,7 +80,7 @@ function diaryCube(scene, interactionManager) {
 
 function diaryState() {
     if (!isNoteInInventory(diaryString)) {
-        addNoteToInventory(diaryString, noteicon)
+        addNoteToInventory(diaryString, noteIcon)
         updateText("!");
         updateText("Has Katie been reading my old journal? Where did she find this relic? Jesus, that's so embarrassing.");
     } else if (isNoteInInventory(diaryString)) {

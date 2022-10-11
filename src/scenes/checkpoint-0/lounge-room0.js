@@ -14,29 +14,6 @@ import { artRoom1Factory } from '../checkpoint-1/art-room1';
 import { bedRoom1Factory } from '../checkpoint-1/bed-room1';
 import { treadMillRoomFactory } from './treadmill-room0';
 
-game = {
-    rooms: {
-        lounge: {
-            texture: "",
-            effect: "",
-            exits: [
-                {
-                    id: "hallway-door",
-                    exitTo: "hallway"
-                },
-            ],
-            objects: [
-               {
-                x,y,z:
-                name:  "plant",
-                text: ""
-               } 
-            ]
-        }
-
-    }
-}
-
 export function loungeRoomFactory() {
     const scene = new THREE.Scene();
     const interactionManager = getInteractionManager();

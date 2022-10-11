@@ -6,11 +6,9 @@ import { updateText } from '../../dom/text-update';
 
 // icons
 import objectIcon from '../../assets/icons/object-gem-icon.jpg';
-import noteicon from '../../assets/icons/note-icon.jpg';
 import imageIcon from '../../assets/icons/image-polaroid-icon.jpg'
 import { checkTimeLine } from '../../state-management/timeline-state';
 import { changeCheckpoint, changeRoom } from '../scene-manager';
-import { artRoom1Factory } from '../checkpoint-1/art-room1';
 import { bedRoom1Factory } from '../checkpoint-1/bed-room1';
 import { treadMillRoomFactory } from './treadmill-room0';
 

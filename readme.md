@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Only Shadows
 
 A point-and-click adventure game based on a short story a friend of mine wrote - coincidentally, during the process of making the game I found out it's due to be published about a month from now!  
@@ -12,19 +11,16 @@ This [miro board](https://miro.com/app/board/uXjVPap0qME=/?share_link_id=2409770
 - Stylistically, the images are manipulated and distorted using an algorithm I made.
 
 ## Play It
-The deployed version can be played [here](https://immersive-bubble.vercel.app/). **Note the WASD controls**. This version was a test site for proof of concept, namely working through the following: 
-1. Creating 3D environments made out of images that a player can explore.
-2. Creating objects within the environment that a player could interact with. 
-3. Testing text toggling based on interactions with the environment. 
-4. Inventory data storage.
-5. Timelines and checkpoints to ensure that the environment can 'permanently' change. 
+**Note the WASD controls**. 
 
-Coming soon: the current codebase pushed through to deployment. I'm currently working through some bugs that pop up when I try to bridge the 'cut scene' part of the game to the free-roaming part. These are the two distinct types of gameplay. The free roam gameplay has the player moving through a 3D bubble image environment. The player interacts with objects, explores the scene to achieve objectives and finds clues that help drive the narrative. The parts that act more like a cut-scene are made from flat images. In that type of game play the player is forced to go forward or do nothing, this is where the most dense storytelling will occur. 
+Coming soon: 
+- Cut Scenes made from flat images targeted with more interesting distorting algorithms. 
+- Check out [this](https://github.com/Yasmin-A95/Only_Shadows_Cut_Scene) repo to see that code!
+- Better and more tangible plot 
+- Inventory display
+- Boss fight
 
 ## Setup Locally 
-=======
-# Setup
->>>>>>> gamestate
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
 

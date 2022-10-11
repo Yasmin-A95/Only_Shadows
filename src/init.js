@@ -3,6 +3,7 @@ import { FirstPersonControls } from './lib/controls';
 import { getCurrentScene, changeScene } from './scenes/scene-manager';
 import { InteractionManager } from "three.interactive";
 import { loadGame, initNewGameState } from './state-management/game-state';
+import { autoSavetext } from './dom/text-update';
 
 let camera, renderer, firstPersonController, interactionManager;
 
@@ -15,6 +16,7 @@ function init() {
 export function startGame(sceneFactory) {
     changeScene(sceneFactory);
     renderer.setAnimationLoop(animation);
+    autoSavetext();
 };
 
 export function getInteractionManager() {
@@ -59,4 +61,8 @@ export function handleRestartButton(e) {
     initNewGameState();
     window.location.reload();
 };
+
+export function getCamera() {
+    return camera;
+}
 export default init;

@@ -89,7 +89,7 @@ function environmentSphere(scene, interactionManager) {
 // making objects
 function overlockerCube(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.5 });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 1.5;
     cube.position.y = -2.5;
@@ -103,7 +103,7 @@ function overlockerCube(scene, interactionManager) {
 
 function heaterCube(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.5 });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 1.5;
     cube.position.y = -4.5;
@@ -118,7 +118,7 @@ function heaterCube(scene, interactionManager) {
 
 function ipadCube(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.5 });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = 3.5;
     cube.position.y = - 3;
@@ -131,7 +131,7 @@ function ipadCube(scene, interactionManager) {
 
 function jumperCube(scene, interactionManager) {
     const geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2);
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.5 });
+    const material = new THREE.MeshBasicMaterial({ wireframe: true, opacity: 0.2 });
     const cube = new THREE.Mesh(geometry, material);
     cube.position.x = - 3.7;
     cube.position.y = -2.4;

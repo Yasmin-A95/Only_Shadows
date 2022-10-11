@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Only Shadows
 
 A point-and-click adventure game based on a short story a friend of mine wrote - coincidentally, during the process of making the game I found out it's due to be published about a month from now!  
@@ -21,6 +22,9 @@ The deployed version can be played [here](https://immersive-bubble.vercel.app/).
 Coming soon: the current codebase pushed through to deployment. I'm currently working through some bugs that pop up when I try to bridge the 'cut scene' part of the game to the free-roaming part. These are the two distinct types of gameplay. The free roam gameplay has the player moving through a 3D bubble image environment. The player interacts with objects, explores the scene to achieve objectives and finds clues that help drive the narrative. The parts that act more like a cut-scene are made from flat images. In that type of game play the player is forced to go forward or do nothing, this is where the most dense storytelling will occur. 
 
 ## Setup Locally 
+=======
+# Setup
+>>>>>>> gamestate
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
 
@@ -99,3 +103,59 @@ It looks like this:
     }
 }
 ```
+## Game State take Two
+
+### For ~DATA DRIVEN~ re Josh's Suggestions! 
+
+//TODO: make game state look something like this
+
+game = {
+    checkpoints: {
+        checkpoint-0: {
+            rooms: {
+                bedroom: { 
+                    geometry: [5, 32, 16],
+                    meshImage: "/some/url",
+                    objects: 
+                    {
+                        changeRoomObjects: [
+                            {
+                                id: "bedroom-door",
+                                exitTo: "hallway",
+                                geometry: [2, 5, 2],
+                                positionXYZ: [-2, -1.4, 3],
+                                color: "pink"
+                            }
+                        ],
+                        updateTextObjects: [
+                            {
+                                name: "bed",
+                                text: "now's not the time...",
+                                geometry: [1.3, 0.8, 0.8],
+                                positionXYZ: [-1, -2.1, -4.5],
+                                color: "yellow"
+
+                            }
+                        ],
+                        inventoryObjects: [
+                            {
+                                type: note,
+                                geometry: [0.3, 0.5, 0.3],
+                                positionXYZ: [4.3, -2.4, -0.1],
+                                color: "yellow",
+                                text: "death is imminent",
+                                onAddInventory: "note reads: death is imminent",
+                                onAlreadyInventory: "note still reads: death is imminent..."
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        checkpoint-1: {
+            ... etc
+        }
+    }
+}
+
+// TODO: make a function that can read said state and test it out 

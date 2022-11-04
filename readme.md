@@ -1,6 +1,10 @@
 # Only Shadows
 
+
 A point-and-click adventure game based on a short story a friend of mine wrote - coincidentally, during the process of making the game I found out it's due to be published about a month from now!  
+
+## Play It
+[here](https://immersive-bubble.vercel.app/) WSAD controls 
 
 ## Other Repos Relevant to the Project
 - https://github.com/Yasmin-A95/cut_scene 
@@ -10,8 +14,6 @@ This [miro board](https://miro.com/app/board/uXjVPap0qME=/?share_link_id=2409770
 - I achieved this by using the bubble camera built into google's street view app.  
 - Stylistically, the images are manipulated and distorted using an algorithm I made.
 
-## Play It
-**Note the WASD controls**. 
 
 Coming soon: 
 - Cut Scenes made from flat images targeted with more interesting distorting algorithms. 
